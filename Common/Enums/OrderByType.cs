@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OL
+namespace Common.Enums
 {
-    public class ObjBaseEntity
+    public enum OrderByType
     {
-        public int Id { get; set; }
+        ASC = 1,
+        DESC = 2
     }
 }

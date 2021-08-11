@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OL
 {
-    public class ObjAppUserRole : ObjBaseEntity
+    public class ObjAppUserRole : BaseEntity
     {
         public int AppUserId { get; set; }
         public ObjAppUser ObjAppUser { get; set; }

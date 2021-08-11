@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace OL
 {
-    public class ObjBlogAppUserStatus : BaseEntity
+    public class ObjCategory : BaseEntity
     {
         public string Definition { get; set; }
-        public List<ObjBlogAppUser> BlogAppUsers { get; set; }
+        public bool Status { get; set; }
+        public List<ObjBlog> Blogs { get; set; }
+
     }
 }

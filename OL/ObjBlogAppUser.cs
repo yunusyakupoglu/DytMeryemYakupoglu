@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OL
 {
-    public class ObjBlogAppUser : ObjBaseEntity
+    public class ObjBlogAppUser : BaseEntity
     {
         public int BlogId { get; set; }
         public ObjBlog ObjBlog { get; set; }

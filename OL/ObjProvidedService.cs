@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OL
 {
-    public class ObjProvidedService : ObjBaseEntity
+    public class ObjProvidedService : BaseEntity
     {
         public string Title { get; set; }
         public string ImagePath { get; set; }
