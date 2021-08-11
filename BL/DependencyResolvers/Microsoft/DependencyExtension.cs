@@ -14,7 +14,7 @@ namespace BL.DependencyResolvers.Microsoft
     {
         public static void AddDependencies(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<AppDbContext>(opt =>
+            services.AddDbContext<ApplicationDbContext>(opt =>
             {
                 opt.UseSqlServer(configuration.GetConnectionString("Default"));
             });

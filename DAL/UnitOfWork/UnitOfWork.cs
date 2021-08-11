@@ -11,9 +11,9 @@ namespace DAL.UnitOfWork
 {
     public class UnitOfWork
     {
-        private readonly AppDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public UnitOfWork(AppDbContext context)
+        public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
         }

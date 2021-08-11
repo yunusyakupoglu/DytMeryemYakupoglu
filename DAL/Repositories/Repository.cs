@@ -13,9 +13,9 @@ namespace DAL.Repositories
 {
     public class Repository<T> : IRepository<T> where T : BaseEntity
     {
-        private readonly AppDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public Repository(AppDbContext context)
+        public Repository(ApplicationDbContext context)
         {
             _context = context;
         }
