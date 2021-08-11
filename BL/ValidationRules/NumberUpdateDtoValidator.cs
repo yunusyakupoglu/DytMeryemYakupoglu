@@ -8,13 +8,12 @@ using System.Threading.Tasks;
 
 namespace BL.ValidationRules
 {
-    public class AddressUpdateDtoValidator : AbstractValidator<AddressUpdateDto>
+    public class NumberUpdateDtoValidator : AbstractValidator<NumberUpdateDto>
     {
-        public AddressUpdateDtoValidator()
+        public NumberUpdateDtoValidator()
         {
             RuleFor(x => x.Id).NotEmpty();
-            RuleFor(x => x.Coordinate).NotEmpty();
-            RuleFor(x => x.Description).NotEmpty();
+            RuleFor(x => x.Definition).NotEmpty();
         }
     }
 }
