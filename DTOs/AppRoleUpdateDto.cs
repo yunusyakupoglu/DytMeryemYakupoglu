@@ -1,12 +1,13 @@
-﻿using System;
+﻿using OL;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using OL;
 
 namespace DTOs
 {
-    public class AppRoleCreateDto : IDto
+    public class AppRoleUpdateDto : IDto
     {
+        public int Id { get; set; }
         public string Definition { get; set; }
         public List<ObjAppUserRole> AppUserRoles { get; set; }
 
