@@ -1,4 +1,6 @@
-﻿using DAL;
+﻿using AutoMapper;
+using DAL;
+using DAL.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,6 +20,16 @@ namespace BL.DependencyResolvers.Microsoft
             {
                 opt.UseSqlServer(configuration.GetConnectionString("Default"));
             });
+
+            var mapperConfiguration = new MapperConfiguration(opt =>
+            {
+                //opt.AddProfile();
+            });
+
+            var mapper = mapperConfiguration.CreateMapper();
+            services.AddSingleton(mapper);
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
         }
     }
 }

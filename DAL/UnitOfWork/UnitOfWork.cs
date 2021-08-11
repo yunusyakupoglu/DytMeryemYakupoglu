@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAL.UnitOfWork
 {
-    public class UnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _context;
 
