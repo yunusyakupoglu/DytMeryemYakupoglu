@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTOs
 {
-    class SocialMediaAccountListDto
+    public class SocialMediaAccountListDto : IDto
     {
         public int Id { get; set; }
         public string Name { get; set; }

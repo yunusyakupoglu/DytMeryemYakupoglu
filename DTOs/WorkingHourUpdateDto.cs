@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTOs
 {
-    public class WorkingHourUpdateDto : IDto
+    public class WorkingHourUpdateDto : IUpdateDto
     {
         public int Id { get; set; }
         public string Day { get; set; }

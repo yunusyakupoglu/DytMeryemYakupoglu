@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DTOs
 {
-    public class ProvidedServiceUpdateDto : IDto
+    public class ProvidedServiceUpdateDto : IUpdateDto
     {
         public int Id { get; set; }
         public string Title { get; set; }

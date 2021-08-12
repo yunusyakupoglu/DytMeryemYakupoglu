@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace DTOs
 {
-    public class MailUpdateDto : IUpdateDto 
+    public interface IUpdateDto
     {
-        public int Id { get; set; }
-        public string MailAddress { get; set; }
+        int Id { get; set; }
     }
 }

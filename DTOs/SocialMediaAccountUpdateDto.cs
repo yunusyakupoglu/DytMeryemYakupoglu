@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DTOs
 {
-    public class SocialMediaAccountUpdateDto : IDto
+    public class SocialMediaAccountUpdateDto : IUpdateDto
     {
         public int Id { get; set; }
         public string Name { get; set; }

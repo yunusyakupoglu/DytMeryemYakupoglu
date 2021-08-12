@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DTOs
 {
-    public class BlogAppUserStatusUpdateDto : IDto
+    public class BlogAppUserStatusUpdateDto : IUpdateDto
     {
         public int Id { get; set; }
         public string Definition { get; set; }

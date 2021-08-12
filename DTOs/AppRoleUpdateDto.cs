@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DTOs
 {
-    public class AppRoleUpdateDto : IDto
+    public class AppRoleUpdateDto : IUpdateDto
     {
         public int Id { get; set; }
         public string Definition { get; set; }

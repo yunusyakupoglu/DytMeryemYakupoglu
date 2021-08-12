@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using BL.IServices;
+using BL.Mappings.AutoMapper;
+using BL.Services;
 using BL.ValidationRules;
 using DAL;
 using DAL.UnitOfWork;
@@ -26,7 +29,7 @@ namespace BL.DependencyResolvers.Microsoft
 
             var mapperConfiguration = new MapperConfiguration(opt =>
             {
-                //opt.AddProfile();
+                opt.AddProfile(new MapProfile());
             });
 
             var mapper = mapperConfiguration.CreateMapper();
@@ -68,6 +71,19 @@ namespace BL.DependencyResolvers.Microsoft
 
             services.AddTransient<IValidator<WorkingHourCreateDto>, WorkingHourCreateDtoValidator>();
             services.AddTransient<IValidator<WorkingHourUpdateDto>, WorkingHourUpdateDtoValidator>();
+
+            services.AddScoped<IAddressManager, AddressManager>();
+            services.AddScoped<IAppRoleManager, AppRoleManager>();
+            services.AddScoped<IAppUserManager, AppUserManager>();
+            services.AddScoped<IBlogAppUserStatusManager, BlogAppUserStatusManager>();
+            services.AddScoped<IBlogManager, BlogManager>();
+            services.AddScoped<ICategoryManager, CategoryManager>();
+            services.AddScoped<IMailManager, MailManager>();
+            services.AddScoped<INumberCategoryManager, NumberCategoryManager>();
+            services.AddScoped<INumberManager, NumberManager>();
+            services.AddScoped<IProvidedServiceManager, ProvidedServiceManager>();
+            services.AddScoped<ISocialMediaAccountManager, SocialMediaAccountManager>();
+            services.AddScoped<IWorkingHourManager, WorkingHourManager>();
         }
     }
 }
