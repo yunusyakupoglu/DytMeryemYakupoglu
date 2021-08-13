@@ -1,4 +1,5 @@
-﻿using DTOs;
+﻿using Common;
+using DTOs;
 using OL;
 using System;
 using System.Collections.Generic;
@@ -10,5 +11,7 @@ namespace BL.IServices
 {
     public interface ICategoryManager : IService<CategoryCreateDto, CategoryUpdateDto, CategoryListDto, ObjCategory>
     {
+        Task<IResponse<List<CategoryListDto>>> GetActiveAsync();
+
     }
 }

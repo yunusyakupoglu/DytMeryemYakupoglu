@@ -1,4 +1,8 @@
+using AutoMapper;
 using BL.DependencyResolvers.Microsoft;
+using BL.Helpers;
+using FluentValidation;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -9,6 +13,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using UI.Mappings.AutoMapper;
+using UI.Models;
+using UI.ValidationRules;
 
 namespace UI
 {
@@ -27,7 +34,33 @@ namespace UI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDependencies(Configuration);
+            services.AddTransient<IValidator<UserCreateModel>, UserCreateModelValidator>();
+
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(opt =>
+    {
+        opt.Cookie.Name = "DytMeryemYakupoglu";
+        opt.Cookie.HttpOnly = true;
+        opt.Cookie.SameSite = SameSiteMode.Strict;
+        opt.Cookie.SecurePolicy = CookieSecurePolicy.SameAsRequest;
+        opt.ExpireTimeSpan = TimeSpan.FromDays(20);
+        opt.LoginPath = new PathString("/Account/SignIn");
+        opt.LogoutPath = new PathString("/Account/LogOut");
+        opt.AccessDeniedPath = new PathString("/Account/AccessDenied");
+    });
+
             services.AddControllersWithViews();
+
+            var profiles = ProfileHelper.GetProfiles();
+            profiles.Add(new UIMapProfile());
+
+            var configuration = new MapperConfiguration(opt =>
+            {
+                opt.AddProfiles(profiles);
+            });
+
+            var mapper = configuration.CreateMapper();
+            services.AddSingleton(mapper);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +72,9 @@ namespace UI
             }
 
             app.UseRouting();
+            app.UseStaticFiles();
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {

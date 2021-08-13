@@ -56,6 +56,18 @@ namespace DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("objAppRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Definition = "Admin"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Definition = "Member"
+                        });
                 });
 
             modelBuilder.Entity("OL.ObjAppUser", b =>
@@ -64,6 +76,11 @@ namespace DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -130,7 +147,7 @@ namespace DAL.Migrations
 
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
+                        .HasColumnType("Date")
                         .HasDefaultValueSql("getDate()");
 
                     b.Property<string>("Description")
@@ -299,7 +316,7 @@ namespace DAL.Migrations
 
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
+                        .HasColumnType("Date")
                         .HasDefaultValueSql("getDate()");
 
                     b.Property<string>("Description")

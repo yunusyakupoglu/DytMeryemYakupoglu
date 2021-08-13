@@ -1,4 +1,5 @@
-﻿using DTOs;
+﻿using Common;
+using DTOs;
 using OL;
 using System;
 using System.Collections.Generic;
@@ -10,5 +11,6 @@ namespace BL.IServices
 {
     public interface IBlogManager : IService<BlogCreateDto, BlogUpdateDto, BlogListDto, ObjBlog>
     {
+        Task<IResponse<List<BlogListDto>>> GetActiveAsync();
     }
 }

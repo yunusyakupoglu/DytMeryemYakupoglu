@@ -40,6 +40,7 @@ namespace BL.Services
             {
                 var createdEntity = _mapper.Map<T>(dto);
                 await _unitOfWork.GetRepository<T>().CreateAsync(createdEntity);
+                await _unitOfWork.SaveChangesAsync();
                 return new Response<CreateDto>(ResponseType.Succes, dto);
             }
             return new Response<CreateDto>(dto, result.ConvertToCustomValidationError());
@@ -67,6 +68,7 @@ namespace BL.Services
             if (data == null)
                 return new Response<IDto>($"{id} ye sahip data bulunamadı", ResponseType.NotFound);
             _unitOfWork.GetRepository<T>().Remove(data);
+            await _unitOfWork.SaveChangesAsync();
             return new Response(ResponseType.Succes);
         }
 
@@ -80,6 +82,7 @@ namespace BL.Services
                     return new Response<UpdateDto>($"{dto.Id} ye sahip data bulunamadı", ResponseType.NotFound);
                 var entity = _mapper.Map<T>(dto);
                 _unitOfWork.GetRepository<T>().Update(entity, unchangedData);
+                await _unitOfWork.SaveChangesAsync();
                 return new Response<UpdateDto>(ResponseType.Succes, dto);
             }
             return new Response<UpdateDto>(dto, result.ConvertToCustomValidationError());

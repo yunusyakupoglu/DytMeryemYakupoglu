@@ -14,6 +14,19 @@ namespace DAL.Configurations
         public void Configure(EntityTypeBuilder<ObjAppRole> builder)
         {
             builder.Property(x => x.Definition).HasMaxLength(500).IsRequired();
+            builder.HasData(new ObjAppRole[]
+            {
+                new()
+                {
+                    Definition="Admin",
+                    Id=1,
+                },
+                new()
+                {
+                    Definition="Member",
+                    Id=2
+                }
+            });
         }
     }
 }

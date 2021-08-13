@@ -9,7 +9,5 @@ namespace DTOs
     {
         public int Id { get; set; }
         public string Definition { get; set; }
-        public List<ObjAppUserRole> AppUserRoles { get; set; }
-
     }
 }

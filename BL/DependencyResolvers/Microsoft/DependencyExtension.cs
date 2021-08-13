@@ -27,14 +27,6 @@ namespace BL.DependencyResolvers.Microsoft
                 opt.UseSqlServer(configuration.GetConnectionString("Default"));
             });
 
-            var mapperConfiguration = new MapperConfiguration(opt =>
-            {
-                opt.AddProfile(new MapProfile());
-            });
-
-            var mapper = mapperConfiguration.CreateMapper();
-            services.AddSingleton(mapper);
-
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IValidator<AddressCreateDto>, AddressCreateDtoValidator>();
             services.AddTransient<IValidator<AddressUpdateDto>, AddressUpdateDtoValidator>();
@@ -71,6 +63,9 @@ namespace BL.DependencyResolvers.Microsoft
 
             services.AddTransient<IValidator<WorkingHourCreateDto>, WorkingHourCreateDtoValidator>();
             services.AddTransient<IValidator<WorkingHourUpdateDto>, WorkingHourUpdateDtoValidator>();
+
+            services.AddTransient<IValidator<AppUserLoginDto>, AppUserLoginDtoValidator>();
+
 
             services.AddScoped<IAddressManager, AddressManager>();
             services.AddScoped<IAppRoleManager, AppRoleManager>();
