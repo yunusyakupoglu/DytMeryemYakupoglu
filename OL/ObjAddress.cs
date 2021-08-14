@@ -10,5 +10,6 @@ namespace OL
     {
         public string Description { get; set; }
         public string Coordinate { get; set; }
+        public bool Status { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DTOs;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +13,32 @@ namespace UI.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        public IActionResult Blog()
+        {
+            return View();
+        }
+
+        public IActionResult Andulasyon()
+        {
+            return View();
+        }
+
+        public IActionResult Contact()
+        {
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error(ErrorDto errorDto)
+        {
+            return View(errorDto);
         }
     }
 }

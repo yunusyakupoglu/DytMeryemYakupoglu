@@ -36,6 +36,9 @@ namespace DAL.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("objAddresses");
@@ -53,6 +56,9 @@ namespace DAL.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("objAppRoles");
@@ -61,12 +67,20 @@ namespace DAL.Migrations
                         new
                         {
                             Id = 1,
-                            Definition = "Admin"
+                            Definition = "SuperAdmin",
+                            Status = false
                         },
                         new
                         {
                             Id = 2,
-                            Definition = "Member"
+                            Definition = "Admin",
+                            Status = false
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Definition = "Member",
+                            Status = false
                         });
                 });
 
@@ -96,6 +110,9 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.Property<string>("SurName")
                         .IsRequired()
@@ -259,6 +276,9 @@ namespace DAL.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("objMails");
@@ -278,6 +298,9 @@ namespace DAL.Migrations
 
                     b.Property<int>("NumberCategoryId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -328,6 +351,9 @@ namespace DAL.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(300)
@@ -354,6 +380,9 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Url")
                         .IsRequired()
@@ -386,6 +415,9 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 

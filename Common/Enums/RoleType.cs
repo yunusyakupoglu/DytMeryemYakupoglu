@@ -8,7 +8,8 @@ namespace Common.Enums
 {
     public enum RoleType
     {
-        Admin = 1,
-        Member = 2,
+        SuperAdmin = 1,
+        Admin = 2,
+        Member = 3
     }
 }

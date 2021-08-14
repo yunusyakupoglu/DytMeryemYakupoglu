@@ -10,5 +10,6 @@ namespace DTOs
     {
         public int Id { get; set; }
         public string MailAddress { get; set; }
+        public bool Status { get; set; }
     }
 }

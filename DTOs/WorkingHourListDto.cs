@@ -12,5 +12,7 @@ namespace DTOs
         public string Day { get; set; }
         public string Morning { get; set; }
         public string Afternoon { get; set; }
+        public bool Status { get; set; }
+
     }
 }

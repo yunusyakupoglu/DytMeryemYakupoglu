@@ -9,6 +9,6 @@ namespace DTOs
     public class MailCreateDto : IDto
     {
         public string MailAddress { get; set; }
-
+        public bool Status { get; set; }
     }
 }

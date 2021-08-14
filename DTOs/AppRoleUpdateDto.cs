@@ -9,5 +9,7 @@ namespace DTOs
     {
         public int Id { get; set; }
         public string Definition { get; set; }
+        public bool Status { get; set; }
+
     }
 }

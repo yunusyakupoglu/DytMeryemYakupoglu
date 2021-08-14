@@ -19,6 +19,7 @@ namespace DAL.Configurations
             builder.Property(x => x.Email).HasMaxLength(300).IsRequired();
             builder.Property(x => x.PhoneNumber).HasMaxLength(20).IsRequired();
             builder.Property(x => x.Password).HasMaxLength(50).IsRequired();
+            builder.Property(x => x.Status).IsRequired();
         }
     }
 }

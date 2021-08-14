@@ -16,6 +16,7 @@ namespace DAL.Configurations
             builder.Property(x => x.Name).HasMaxLength(50).IsRequired();
             builder.Property(x => x.Url).HasMaxLength(500).IsRequired();
             builder.Property(x => x.IconCode).HasMaxLength(50).IsRequired();
+            builder.Property(x => x.Status).IsRequired();
         }
     }
 }

@@ -35,15 +35,6 @@ namespace BL.Services
             if (validationResult.IsValid)
             {
                 var user = _mapper.Map<ObjAppUser>(dto);
-                //1.yol
-                //user.AppUserRoles = new List<ObjAppUserRole>();
-                //user.AppUserRoles.Add(new ObjAppUserRole
-                //{
-                //    ObjAppUser = user,
-                //    AppRoleId = roleId
-                //});
-                //1.yol sonu
-                //2.yol
                 await _unitOfWork.GetRepository<ObjAppUser>().CreateAsync(user);
                 await _unitOfWork.GetRepository<ObjAppUserRole>().CreateAsync(new ObjAppUserRole
                 {

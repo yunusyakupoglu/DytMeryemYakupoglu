@@ -8,5 +8,7 @@ namespace DTOs
     public class AppRoleCreateDto : IDto
     {
         public string Definition { get; set; }
+        public bool Status { get; set; }
+
     }
 }

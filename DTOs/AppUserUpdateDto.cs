@@ -16,6 +16,8 @@ namespace DTOs
         public string Password { get; set; }
         public string PhoneNumber { get; set; }
         public string Email { get; set; }
+        public bool Status { get; set; }
+
         public List<ObjAppUserRole> AppUserRoles { get; set; }
         public List<ObjBlogAppUser> BlogAppUsers { get; set; }
     }

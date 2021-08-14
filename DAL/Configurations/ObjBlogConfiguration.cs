@@ -17,6 +17,7 @@ namespace DAL.Configurations
             builder.Property(x => x.Description).HasColumnType("ntext").IsRequired();
             builder.Property(x => x.CreatedDate).HasColumnType("Date").HasDefaultValueSql("getDate()");
             builder.Property(x => x.ImagePath).HasMaxLength(500).IsRequired();
+            builder.Property(x => x.Status).IsRequired();
 
             builder.HasOne(x => x.ObjCategory).WithMany(x => x.Blogs).HasForeignKey(x => x.CategoryId);
         }

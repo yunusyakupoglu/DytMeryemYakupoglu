@@ -9,9 +9,10 @@ namespace UI.ValidationRules
 {
     public class UserCreateModelValidator : AbstractValidator<UserCreateModel>
     {
+
         //[Obsolete]
         public UserCreateModelValidator()
-        {
+        {  
             //CascadeMode = CascadeMode.StopOnFirstFailure;
             RuleFor(x => x.Password).NotEmpty().WithMessage("Parola boş geçilemez.");
             RuleFor(x => x.ConfirmPassword).NotEmpty().WithMessage("Parola tekrarı boş geçilemez.");

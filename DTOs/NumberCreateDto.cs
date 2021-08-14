@@ -11,6 +11,7 @@ namespace DTOs
     {
         public string Definition { get; set; }
         public int NumberCategoryId { get; set; }
+        public bool Status { get; set; }
         public ObjNumberCategory ObjNumberCategory { get; set; }
     }
 }
