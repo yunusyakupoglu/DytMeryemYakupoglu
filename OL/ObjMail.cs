@@ -9,5 +9,6 @@ namespace OL
     public class ObjMail : BaseEntity
     {
         public string MailAddress { get; set; }
+        public bool Status { get; set; }
     }
 }

@@ -36,6 +36,9 @@ namespace DAL.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("objAddresses");
@@ -53,9 +56,32 @@ namespace DAL.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("objAppRoles");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Definition = "SuperAdmin",
+                            Status = false
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Definition = "Admin",
+                            Status = false
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Definition = "Member",
+                            Status = false
+                        });
                 });
 
             modelBuilder.Entity("OL.ObjAppUser", b =>
@@ -64,6 +90,11 @@ namespace DAL.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -79,6 +110,9 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.Property<string>("SurName")
                         .IsRequired()
@@ -130,7 +164,7 @@ namespace DAL.Migrations
 
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
+                        .HasColumnType("Date")
                         .HasDefaultValueSql("getDate()");
 
                     b.Property<string>("Description")
@@ -242,6 +276,9 @@ namespace DAL.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.ToTable("objMails");
@@ -261,6 +298,9 @@ namespace DAL.Migrations
 
                     b.Property<int>("NumberCategoryId")
                         .HasColumnType("int");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -299,7 +339,7 @@ namespace DAL.Migrations
 
                     b.Property<DateTime>("CreatedDate")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime2")
+                        .HasColumnType("Date")
                         .HasDefaultValueSql("getDate()");
 
                     b.Property<string>("Description")
@@ -310,6 +350,9 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Title")
                         .IsRequired()
@@ -337,6 +380,9 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Url")
                         .IsRequired()
@@ -369,6 +415,9 @@ namespace DAL.Migrations
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 

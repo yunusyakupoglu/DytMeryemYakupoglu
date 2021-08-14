@@ -16,6 +16,7 @@ namespace DAL.Configurations
             builder.Property(x => x.Day).HasMaxLength(20).IsRequired();
             builder.Property(x => x.Morning).HasMaxLength(20).IsRequired();
             builder.Property(x => x.Afternoon).HasMaxLength(20).IsRequired();
+            builder.Property(x => x.Status).IsRequired();
         }
     }
 }

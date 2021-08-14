@@ -10,5 +10,7 @@ namespace OL
     {
         public string Definition { get; set; }
         public List<ObjAppUserRole> AppUserRoles { get; set; }
+        public bool Status { get; set; }
+
     }
 }

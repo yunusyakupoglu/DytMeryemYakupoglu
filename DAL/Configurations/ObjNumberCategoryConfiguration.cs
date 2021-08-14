@@ -14,6 +14,7 @@ namespace DAL.Configurations
         public void Configure(EntityTypeBuilder<ObjNumberCategory> builder)
         {
             builder.Property(x => x.Definition).HasMaxLength(250).IsRequired();
+            builder.Property(x => x.Status).IsRequired();
         }
     }
 }

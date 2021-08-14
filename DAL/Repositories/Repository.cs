@@ -42,7 +42,7 @@ namespace DAL.Repositories
                 await _context.Set<T>().Where(filter).AsNoTracking().OrderByDescending(selector).ToListAsync();
         }
 
-        public async Task<T> Find(object id)
+        public async Task<T> FindAsync(object id)
         {
             return await _context.Set<T>().FindAsync(id);
         }

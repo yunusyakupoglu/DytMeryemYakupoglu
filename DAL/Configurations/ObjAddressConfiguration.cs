@@ -15,6 +15,7 @@ namespace DAL.Configurations
         {
             builder.Property(x => x.Description).HasMaxLength(500).IsRequired();
             builder.Property(x => x.Coordinate).HasMaxLength(200).IsRequired();
+            builder.Property(x => x.Status).IsRequired();
         }
     }
 }

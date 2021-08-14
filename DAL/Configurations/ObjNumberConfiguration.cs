@@ -19,6 +19,7 @@ namespace DAL.Configurations
             }).IsUnique();
 
             builder.Property(x => x.Definition).HasMaxLength(20).IsRequired();
+            builder.Property(x => x.Status).IsRequired();
             builder.HasOne(x => x.ObjNumberCategory).WithMany(x => x.Numbers).HasForeignKey(x => x.NumberCategoryId);
 
         }

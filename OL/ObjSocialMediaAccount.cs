@@ -11,5 +11,6 @@ namespace OL
         public string Name { get; set; }
         public string Url { get; set; }
         public string IconCode { get; set; }
+        public bool Status { get; set; }
     }
 }
