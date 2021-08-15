@@ -316,6 +316,14 @@
                     <ul id="sidebarnav">
                         <li class="sidebar-item">
                             <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                               asp-controller="Blog" asp-action="Index" aria-expanded="false">
+                                <i class="mdi mdi-format-float-left"></i><span class="hide-menu">
+                                    Yazılarım
+                                </span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                asp-controller="ProvidedService" asp-action="Index" aria-expanded="false">
                                 <i class="mdi mdi-account-edit"></i><span class="hide-menu">
                                     Hizmetler
@@ -348,23 +356,34 @@
                             </a>
                             <ul aria-expanded="false" class="collapse first-level">
                                 <li class="sidebar-item">
-                                    <a asp-controller="PhoneNumbers" asp-action="Index" class="sidebar-link">
-                                        <i class="mdi mdi-phone"></i>
+                                    <a class="sidebar-link has-arrow waves-effect waves-dark"
+                                       href="javascript:void(0)" aria-expanded="false">
+                                        <i class="mdi mdi-contacts"></i>
                                         <span class="hide-menu">
                                             TELEFON NUMARALARI
                                         </span>
                                     </a>
+                                    <ul aria-expanded="false" class="collapse first-level">
+                                        <li class="sidebar-item">
+                                            <a asp-controller="NumberCategory" asp-action="Index" class="sidebar-link">
+                                                <i class="mdi mdi-phone"></i>
+                                                <span class="hide-menu">
+                                                    KATEGORİLER
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li class="sidebar-item">
+                                            <a asp-controller="Number" asp-action="Index" class="sidebar-link">
+                                                <i class="mdi mdi-phone"></i>
+                                                <span class="hide-menu">
+                                                    TELEFON NUMARALARI
+                                                </span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a asp-controller="FaxNumbers" asp-action="Index" class="sidebar-link">
-                                        <i class="mdi mdi-fax"></i>
-                                        <span class="hide-menu">
-                                            FAX NUMARALARI
-                                        </span>
-                                    </a>
-                                </li>
-                                <li class="sidebar-item">
-                                    <a asp-controller="Addresses" asp-action="Index" class="sidebar-link">
+                                    <a asp-controller="Address" asp-action="Index" class="sidebar-link">
                                         <i class="mdi mdi-account-location"></i>
                                         <span class="hide-menu">
                                             ADRESLER VE KOORDİNATLAR
@@ -372,7 +391,7 @@
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a asp-controller="Mails" asp-action="Index" class="sidebar-link">
+                                    <a asp-controller="Mail" asp-action="Index" class="sidebar-link">
                                         <i class="mdi mdi-contact-mail"></i>
                                         <span class="hide-menu">
                                             MAİL ADRESLERİ
@@ -380,7 +399,7 @@
                                     </a>
                                 </li>
                                 <li class="sidebar-item">
-                                    <a asp-controller="SocialMedias" asp-action="Index" class="sidebar-link">
+                                    <a asp-controller="SocialMediaAccount" asp-action="Index" class="sidebar-link">
                                         <i class="mdi mdi-account-multiple"></i>
                                         <span class="hide-menu">
                                             SOSYAL MEDYA HESAPLARI
@@ -716,6 +735,10 @@
         </div>
     </aside>
     <div class="chat-windows"></div>
+    <!-- ============================================================== -->
+    <!-- Font Awesome Icons -->
+    <!-- ============================================================== -->
+    <link rel="stylesheet" href="~/HTWF/scripts/font-awesome/css/font-awesome.min.css">
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->

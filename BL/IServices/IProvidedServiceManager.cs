@@ -11,7 +11,7 @@ namespace BL.IServices
 {
     public interface IProvidedServiceManager : IService<ProvidedServiceCreateDto, ProvidedServiceUpdateDto, ProvidedServiceListDto, ObjProvidedService>
     {
-        //string UploadImage(IFormFile formFile);
-        //string DeleteImage(string filename);
+        string UploadImage(IFormFile formFile);
+        string DeleteImage(string filename);
     }
 }

@@ -11,6 +11,7 @@ namespace DTOs
     {
         public int Id { get; set; }
         public string Definition { get; set; }
+        public string IconCode { get; set; }
         public bool Status { get; set; }
         public List<ObjNumber> Numbers { get; set; }
     }

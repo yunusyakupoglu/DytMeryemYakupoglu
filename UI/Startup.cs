@@ -1,6 +1,7 @@
 using AutoMapper;
 using BL.DependencyResolvers.Microsoft;
 using BL.Helpers;
+using DTOs;
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
@@ -36,6 +37,9 @@ namespace UI
         {
             services.AddDependencies(Configuration);
             services.AddTransient<IValidator<UserCreateModel>, UserCreateModelValidator>();
+            services.AddTransient<IValidator<NumberCreateModel>, NumberCreateModelValidator>();
+            services.AddTransient<IValidator<BlogCreateModel>, BlogCreateModelValidator>();
+
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix).AddDataAnnotationsLocalization();
 
@@ -51,7 +55,7 @@ namespace UI
         opt.LogoutPath = new PathString("/Account/LogOut");
         opt.AccessDeniedPath = new PathString("/Account/AccessDenied");
     }); 
-            services.AddLocalization(options => options.ResourcesPath = "Resources");
+            //services.AddLocalization(options => options.ResourcesPath = "Resources");
 
 
            

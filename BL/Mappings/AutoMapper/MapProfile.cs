@@ -56,6 +56,10 @@ namespace BL.Mappings.AutoMapper
             CreateMap<WorkingHourCreateDto, ObjWorkingHour>().ReverseMap();
             CreateMap<WorkingHourListDto, ObjWorkingHour>().ReverseMap();
             CreateMap<WorkingHourUpdateDto, ObjWorkingHour>().ReverseMap();
+
+            CreateMap<BlogCreateDto, ObjBlog>().ReverseMap();
+            CreateMap<BlogListDto, ObjBlog>().ReverseMap();
+            CreateMap<BlogUpdateDto, ObjBlog>().ReverseMap();
         }
     }
 }

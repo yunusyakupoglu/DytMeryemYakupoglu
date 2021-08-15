@@ -5,6 +5,7 @@ using DTOs;
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace UI.Controllers
             _appUserManager = appUserManager;
             _mapper = mapper;
         }
-
+        [Authorize]
         public IActionResult SignUp()
         {
             var model = new UserCreateModel();

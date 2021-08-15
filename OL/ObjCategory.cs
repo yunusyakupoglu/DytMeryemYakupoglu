@@ -10,7 +10,7 @@ namespace OL
     {
         public string Definition { get; set; }
         public bool Status { get; set; }
-        public List<ObjBlog> Blogs { get; set; }
+        public ICollection<ObjBlog> Blogs { get; set; }
 
     }
 }

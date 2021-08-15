@@ -1,4 +1,5 @@
-﻿using OL;
+﻿using Microsoft.AspNetCore.Http;
+using OL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,8 +15,10 @@ namespace DTOs
         public bool Status { get; set; }
         public string ImagePath { get; set; }
         public string Description { get; set; }
-        public int CategoryId { get; set; }
-        public ObjCategory ObjCategory { get; set; }
+        public IFormFile FileDoc { get; set; }
+        //public int CategoryId { get; set; }
+        //public ObjCategory ObjCategory { get; set; }
+        public ICollection<ObjCategory> ObjCategories { get; set; }
         public List<ObjBlogAppUser> BlogAppUsers { get; set; }
     }
 }

@@ -17,6 +17,7 @@ namespace DTOs
         public DateTime CreatedDate { get; set; }
         public int CategoryId { get; set; }
         public ObjCategory ObjCategory { get; set; }
+        //public ICollection<ObjCategory> ObjCategories { get; set; }
         public List<ObjBlogAppUser> BlogAppUsers { get; set; }
     }
 }

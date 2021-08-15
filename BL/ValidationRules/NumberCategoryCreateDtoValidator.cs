@@ -13,7 +13,7 @@ namespace BL.ValidationRules
         public NumberCategoryCreateDtoValidator()
         {
             RuleFor(x => x.Definition).NotEmpty();
-            RuleFor(x => x.Status).NotEmpty();
+            RuleFor(x => x.IconCode).NotEmpty();
         }
     }
 }

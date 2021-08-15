@@ -16,8 +16,10 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <form asp-action="Update" method="post">
+                <form asp-action="Update" method="post"  enctype="multipart/form-data">
                     <div asp-validation-summary="ModelOnly" class="text-color"></div>
+                    @Html.HiddenFor(m=> m.ImagePath)
+                    @Html.HiddenFor(m=> m.CreatedDate)
                     <div class="card-body">
                         <div class="row m-auto">
                             <div class="col-12">
@@ -36,8 +38,8 @@
                                         <span class="input-group-text">Upload</span>
                                     </div>
                                     <div class="custom-file">
-                                        <input type="file" asp-for="ImagePath" name="ImagePath" class="custom-file-input" id="ImagePath">
-                                        <label class="custom-file-label" asp-for="ImagePath">@Model.ImagePath</label>
+                                        <input asp-for="FileDoc" name="FileDoc" class="custom-file-input" id="FileDoc">
+                                        <label class="custom-file-label" asp-for="FileDoc">Choose file</label>
                                     </div>
                                 </div>
                                 <div class="form-check form-check-inline">

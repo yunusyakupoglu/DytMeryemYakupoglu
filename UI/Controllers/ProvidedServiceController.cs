@@ -3,6 +3,7 @@ using BL.IServices;
 using DTOs;
 using FluentValidation;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OL;
 using System;
@@ -19,13 +20,15 @@ namespace UI.Controllers
     {
         private readonly IProvidedServiceManager _providedServiceManager;
         private readonly IValidator<ProvidedServiceCreateDto> _providedServiceCreateDtoValidator;
+        private readonly IValidator<ProvidedServiceUpdateDto> _providedServiceUpdateDtoValidator;
         private readonly IMapper _mapper;
 
-        public ProvidedServiceController(IProvidedServiceManager providedServiceManager, IMapper mapper, IValidator<ProvidedServiceCreateDto> providedServiceCreateDtoValidator)
+        public ProvidedServiceController(IProvidedServiceManager providedServiceManager, IMapper mapper, IValidator<ProvidedServiceCreateDto> providedServiceCreateDtoValidator, IValidator<ProvidedServiceUpdateDto> providedServiceUpdateDtoValidator)
         {
             _providedServiceManager = providedServiceManager;
             _mapper = mapper;
             _providedServiceCreateDtoValidator = providedServiceCreateDtoValidator;
+            _providedServiceUpdateDtoValidator = providedServiceUpdateDtoValidator;
         }
 
         public async Task<IActionResult> Index()
@@ -47,6 +50,7 @@ namespace UI.Controllers
             if (result.IsValid)
             {
                 var dto = _mapper.Map<ProvidedServiceCreateDto>(model);
+                dto.ImagePath = _providedServiceManager.UploadImage(dto.FileDoc);
                 var createResponse = await _providedServiceManager.CreateAsync(dto);
                 return this.ResponseRedirectAction(createResponse, "Index");
             }
@@ -66,8 +70,28 @@ namespace UI.Controllers
         [HttpPost]
         public async Task<IActionResult> Update(ProvidedServiceUpdateDto dto)
         {
-            var response = await _providedServiceManager.UpdateAsync(dto);
-            return RedirectToAction("Index");
+            var result = _providedServiceUpdateDtoValidator.Validate(dto);
+            if (result.IsValid)
+            {
+                if (dto.FileDoc != null)
+                {
+                    _providedServiceManager.DeleteImage(dto.ImagePath);
+                    dto.ImagePath = _providedServiceManager.UploadImage(dto.FileDoc);
+                    var createResponse = await _providedServiceManager.UpdateAsync(dto);
+                    return this.ResponseRedirectAction(createResponse, "Index");
+                }
+                else
+                {
+                    var createResponse = await _providedServiceManager.UpdateAsync(dto);
+                    return this.ResponseRedirectAction(createResponse, "Index");
+                }
+              
+            }
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
+            }
+            return View(dto);
         }
     }
 }

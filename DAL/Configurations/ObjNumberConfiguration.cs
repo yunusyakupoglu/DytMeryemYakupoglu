@@ -13,10 +13,10 @@ namespace DAL.Configurations
     {
         public void Configure(EntityTypeBuilder<ObjNumber> builder)
         {
-            builder.HasIndex(x => new
-            {
-                x.NumberCategoryId
-            }).IsUnique();
+            //builder.HasIndex(x => new
+            //{
+            //    x.NumberCategoryId
+            //}).IsUnique();
 
             builder.Property(x => x.Definition).HasMaxLength(20).IsRequired();
             builder.Property(x => x.Status).IsRequired();

@@ -5,10 +5,10 @@
 
 <div class="row page-titles">
     <div class="col-md-5 col-12 align-self-center">
-        <h3 class="text-themecolor mb-0">Çalışma saatleri</h3>
+        <h3 class="text-themecolor mb-0">Adresler</h3>
         <ol class="breadcrumb mb-0 p-0 bg-transparent">
-            <li class="breadcrumb-item"><a asp-action="Index">Çalışma Saatleri</a></li>
-            <li class="breadcrumb-item active">Yeni Çalışma Saati Ekle</li>
+            <li class="breadcrumb-item"><a asp-action="Index">Adresler</a></li>
+            <li class="breadcrumb-item active">Yeni Adres Ekle</li>
         </ol>
     </div>
 </div>
@@ -23,12 +23,12 @@
                             <div class="col-12">
                                 <div class="form-group">
                                     <label asp-for="Coordinate" class="control-label col-form-label">Koordinatlar</label>
-                                    <input type="text" asp-for="Coordinate" name="Title" class="form-control" id="Name" placeholder="" required>
+                                    <input type="text" asp-for="Coordinate" name="Coordinate" class="form-control" id="Coordinate" placeholder="" required>
                                     <span asp-validation-for="Coordinate"></span>
                                 </div>
                                 <div class="form-group">
                                     <label asp-for="Description" class="control-label col-form-label">Sabah</label>
-                                    <input type="text" asp-for="Description" name="Description" class="form-control" id="Name" placeholder="" required>
+                                    <input type="text" asp-for="Description" name="Description" class="form-control" id="Description" placeholder="" required>
                                     <span asp-validation-for="Description"></span>
                                 </div>
                             </div>
@@ -40,7 +40,7 @@
                             <div class="action-form">
                                 <div class="form-group mb-0 text-center">
                                     <button type="submit" class="btn btn-info waves-effect waves-light">Ekle</button>
-                                    <a asp-action="Index" class="btn btn-dark waves-effect waves-light">Tüm Çalışma Saatleri</a>
+                                    <a asp-action="Index" class="btn btn-dark waves-effect waves-light">Tüm Adresler</a>
                                 </div>
                             </div>
                         </div>
