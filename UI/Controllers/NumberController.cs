@@ -73,10 +73,10 @@ namespace UI.Controllers
         {
             var response = await _numberManager.GetByIdAsync<NumberUpdateDto>(id);
             var responseCategory = await _numberCategoryManager.GetAllAsync();
-            //var model = new NumberCreateModel
-            //{
-            //    NumberCategories = new SelectList(responseCategory.Data, "Id", "Definition")
-            //};
+            var model = new NumberUpdateDto
+            {
+                NumberCategories = new SelectList(responseCategory.Data, "Id", "Definition")
+            };
             return View(response.Data);
         }
 

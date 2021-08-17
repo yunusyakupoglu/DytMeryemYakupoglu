@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using BL.IServices;
-using Common;
 using DAL.UnitOfWork;
 using DTOs;
 using FluentValidation;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using OL;
 using System;
@@ -12,38 +12,16 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http.Extensions;
-using Microsoft.Extensions.Hosting;
-
-
-
 
 namespace BL.Services
 {
-    public class BlogManager : Service<BlogCreateDto, BlogUpdateDto, BlogListDto, ObjBlog>, IBlogManager
+    public class AndulasyonManager : Service<AndulasyonCreateDto, AndulasyonUpdateDto, AndulasyonListDto, ObjAndulasyon>, IAndulasyonManager
     {
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly IMapper _mapper;
         private readonly IWebHostEnvironment _env;
-        private readonly IValidator<BlogCreateDto> _createDtoValidator;
 
-
-        public BlogManager(IMapper mapper, IValidator<BlogCreateDto> createDtoValidator, IValidator<BlogUpdateDto> updateDtoValidator, IUnitOfWork unitOfWork, IWebHostEnvironment env) :
-            base(mapper, createDtoValidator, updateDtoValidator, unitOfWork)
+        public AndulasyonManager(IMapper mapper, IValidator<AndulasyonCreateDto> createDtoValidator, IValidator<AndulasyonUpdateDto> updateDtoValidator, IUnitOfWork unitOfWork, IWebHostEnvironment env) : base(mapper, createDtoValidator, updateDtoValidator, unitOfWork)
         {
-            _unitOfWork = unitOfWork;
-            _mapper = mapper;
             _env = env;
-            _createDtoValidator = createDtoValidator;
-        }
-
-        public async Task<IResponse<List<BlogListDto>>> GetActiveAsync()
-        {
-
-            var data = await _unitOfWork.GetRepository<ObjBlog>().GetAllAsync(x => x.Status, x => x.CreatedDate, Common.Enums.OrderByType.DESC);
-            var dto = _mapper.Map<List<BlogListDto>>(data);
-            return new Response<List<BlogListDto>>(ResponseType.Succes, dto);
         }
 
         public string UploadImage(IFormFile formFile)

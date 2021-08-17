@@ -64,6 +64,9 @@ namespace BL.DependencyResolvers.Microsoft
             services.AddTransient<IValidator<WorkingHourCreateDto>, WorkingHourCreateDtoValidator>();
             services.AddTransient<IValidator<WorkingHourUpdateDto>, WorkingHourUpdateDtoValidator>();
 
+            services.AddTransient<IValidator<AndulasyonCreateDto>, AndulasyonCreateDtoValidator>();
+            services.AddTransient<IValidator<AndulasyonUpdateDto>, AndulasyonUpdateDtoValidator>();
+
             services.AddTransient<IValidator<AppUserLoginDto>, AppUserLoginDtoValidator>();
 
 
@@ -79,6 +82,7 @@ namespace BL.DependencyResolvers.Microsoft
             services.AddScoped<IProvidedServiceManager, ProvidedServiceManager>();
             services.AddScoped<ISocialMediaAccountManager, SocialMediaAccountManager>();
             services.AddScoped<IWorkingHourManager, WorkingHourManager>();
+            services.AddScoped<IAndulasyonManager, AndulasyonManager>();
         }
     }
 }

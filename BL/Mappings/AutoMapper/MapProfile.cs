@@ -60,6 +60,10 @@ namespace BL.Mappings.AutoMapper
             CreateMap<BlogCreateDto, ObjBlog>().ReverseMap();
             CreateMap<BlogListDto, ObjBlog>().ReverseMap();
             CreateMap<BlogUpdateDto, ObjBlog>().ReverseMap();
+
+            CreateMap<AndulasyonCreateDto, ObjAndulasyon>().ReverseMap();
+            CreateMap<AndulasyonListDto, ObjAndulasyon>().ReverseMap();
+            CreateMap<AndulasyonUpdateDto, ObjAndulasyon>().ReverseMap();
         }
     }
 }

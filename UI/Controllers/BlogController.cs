@@ -16,20 +16,16 @@ namespace UI.Controllers
     public class BlogController : Controller
     {
         private readonly IBlogManager _blogManager;
-        private readonly ICategoryManager _categoryManager;
         private readonly IValidator<BlogCreateDto> _blogCreateDtoValidator;
         private readonly IValidator<BlogUpdateDto> _blogUpdateDtoValidator;
-        private readonly IValidator<BlogCreateModel> _blogCreateModelValidator;
         private readonly IMapper _mapper;
 
-        public BlogController(IBlogManager blogManager, IValidator<BlogCreateDto> blogCreateDtoValidator, IValidator<BlogUpdateDto> blogUpdateDtoValidator, IMapper mapper, ICategoryManager categoryManager, IValidator<BlogCreateModel> blogCreateModelValidator)
+        public BlogController(IBlogManager blogManager, IValidator<BlogCreateDto> blogCreateDtoValidator, IValidator<BlogUpdateDto> blogUpdateDtoValidator, IMapper mapper)
         {
             _blogManager = blogManager;
             _blogCreateDtoValidator = blogCreateDtoValidator;
             _blogUpdateDtoValidator = blogUpdateDtoValidator;
             _mapper = mapper;
-            _categoryManager = categoryManager;
-            _blogCreateModelValidator = blogCreateModelValidator;
         }
 
         public async Task<IActionResult> Index()
@@ -38,13 +34,9 @@ namespace UI.Controllers
             return this.ResponseView(response);
         }
 
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
-            var response = await _categoryManager.GetAllAsync();
-            var model = new BlogCreateModel
-            {
-                Categories = new SelectList(response.Data, "Id", "Definition")
-            };
+            var model = new BlogCreateDto();
             return View(model);
         }
 

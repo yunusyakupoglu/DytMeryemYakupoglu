@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace BL.ValidationRules
 {
-    public class BlogUpdateDtoValidator : AbstractValidator<BlogUpdateDto>
+    public class AndulasyonUpdateDtoValidator : AbstractValidator<AndulasyonUpdateDto>
     {
-        public BlogUpdateDtoValidator()
+        public AndulasyonUpdateDtoValidator()
         {
             RuleFor(x => x.Id).NotEmpty();
             RuleFor(x => x.Title).NotEmpty();

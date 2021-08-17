@@ -32,6 +32,7 @@ namespace DAL
             modelBuilder.ApplyConfiguration(new ObjMailConfiguration());
             modelBuilder.ApplyConfiguration(new ObjSocialMediaAccountConfiguration());
             modelBuilder.ApplyConfiguration(new ObjWorkingHourConfiguration());
+            modelBuilder.ApplyConfiguration(new ObjAndulasyonConfiguration());
         }
 
         public DbSet<ObjAppRole> objAppRoles { get; set; }
@@ -48,5 +49,6 @@ namespace DAL
         public DbSet<ObjMail> objMails { get; set; }
         public DbSet<ObjSocialMediaAccount> objSocialMediaAccounts { get; set; }
         public DbSet<ObjWorkingHour> ObjWorkingHours { get; set; }
+        public DbSet<ObjAndulasyon> ObjAndulasyons { get; set; }
     }
 }

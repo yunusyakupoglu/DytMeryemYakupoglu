@@ -20,7 +20,6 @@ namespace DAL.Configurations
                 x.AppUserId
             }).IsUnique();
 
-            builder.HasOne(x => x.ObjBlog).WithMany(x => x.BlogAppUsers).HasForeignKey(x => x.BlogId);
             builder.HasOne(x => x.ObjBlogAppUserStatus).WithMany(x => x.BlogAppUsers).HasForeignKey(x => x.BlogAppUserStatusId);
             builder.HasOne(x => x.ObjAppUser).WithMany(x => x.BlogAppUsers).HasForeignKey(x => x.AppUserId);
         }

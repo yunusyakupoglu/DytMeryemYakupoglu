@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace OL
 {
-    public class ObjBlog : BaseEntity
+    public class ObjAboutUs : BaseEntity
     {
         public string Title { get; set; }
-        public string ImagePath { get; set; }
         public string Description { get; set; }
-        public DateTime CreatedDate { get; set; }
         public bool Status { get; set; }
-
     }
 }

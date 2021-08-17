@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace DAL.Configurations
 {
-    public class ObjBlogConfiguration : IEntityTypeConfiguration<ObjBlog>
+    public class ObjAndulasyonConfiguration : IEntityTypeConfiguration<ObjAndulasyon>
     {
-        public void Configure(EntityTypeBuilder<ObjBlog> builder)
+        public void Configure(EntityTypeBuilder<ObjAndulasyon> builder)
         {
             builder.Property(x => x.Title).HasMaxLength(250).IsRequired();
             builder.Property(x => x.Description).HasColumnType("ntext").IsRequired();
