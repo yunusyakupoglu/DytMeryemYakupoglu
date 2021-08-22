@@ -16,6 +16,7 @@ namespace BL.ValidationRules
             RuleFor(x => x.SurName).NotEmpty();
             RuleFor(x => x.UserName).NotEmpty();
             RuleFor(x => x.PhoneNumber).NotEmpty();
+            RuleFor(x => x.Status).NotEmpty();
         }
     }
 }

@@ -14,5 +14,6 @@ namespace DTOs
         public string ImagePath { get; set; }
         public string Description { get; set; }
         public IFormFile FileDoc { get; set; }
+
     }
 }

@@ -37,14 +37,6 @@ namespace BL.Mappings.AutoMapper
             CreateMap<MailListDto, ObjMail>().ReverseMap();
             CreateMap<MailUpdateDto, ObjMail>().ReverseMap();
 
-            CreateMap<NumberCategoryCreateDto, ObjNumberCategory>().ReverseMap();
-            CreateMap<NumberCategoryListDto, ObjNumberCategory>().ReverseMap();
-            CreateMap<NumberCategoryUpdateDto, ObjNumberCategory>().ReverseMap();
-
-            CreateMap<NumberCreateDto, ObjNumber>().ReverseMap();
-            CreateMap<NumberListDto, ObjNumber>().ReverseMap();
-            CreateMap<NumberUpdateDto, ObjNumber>().ReverseMap();
-
             CreateMap<ProvidedServiceCreateDto, ObjProvidedService>().ReverseMap();
             CreateMap<ProvidedServiceListDto, ObjProvidedService>().ReverseMap();
             CreateMap<ProvidedServiceUpdateDto, ObjProvidedService>().ReverseMap();
@@ -64,6 +56,46 @@ namespace BL.Mappings.AutoMapper
             CreateMap<AndulasyonCreateDto, ObjAndulasyon>().ReverseMap();
             CreateMap<AndulasyonListDto, ObjAndulasyon>().ReverseMap();
             CreateMap<AndulasyonUpdateDto, ObjAndulasyon>().ReverseMap();
+
+            CreateMap<CommentCreateDto, ObjComment>().ReverseMap();
+            CreateMap<CommentListDto, ObjComment>().ReverseMap();
+            CreateMap<CommentUpdateDto, ObjComment>().ReverseMap();
+
+            CreateMap<PricingCreateDto, ObjPricing>().ReverseMap();
+            CreateMap<PricingListDto, ObjPricing>().ReverseMap();
+            CreateMap<PricingUpdateDto, ObjPricing>().ReverseMap();
+
+            CreateMap<OnlineDietCreateDto, ObjOnlineDiet>().ReverseMap();
+            CreateMap<OnlineDietListDto, ObjOnlineDiet>().ReverseMap();
+            CreateMap<OnlineDietUpdateDto, ObjOnlineDiet>().ReverseMap();
+
+            CreateMap<WeakenedCreateDto, ObjWeakened>().ReverseMap();
+            CreateMap<WeakenedListDto, ObjWeakened>().ReverseMap();
+            CreateMap<WeakenedUpdateDto, ObjWeakened>().ReverseMap();
+
+            CreateMap<AboutUsCreateDto, ObjAboutUs>().ReverseMap();
+            CreateMap<AboutUsListDto, ObjAboutUs>().ReverseMap();
+            CreateMap<AboutUsUpdateDto, ObjAboutUs>().ReverseMap();
+
+            CreateMap<FaqCreateDto, ObjFaq>().ReverseMap();
+            CreateMap<FaqListDto, ObjFaq>().ReverseMap();
+            CreateMap<FaqUpdateDto, ObjFaq>().ReverseMap();
+
+            CreateMap<OnlineDietFaqCreateDto, ObjOnlineDietFaq>().ReverseMap();
+            CreateMap<OnlineDietFaqListDto, ObjOnlineDietFaq>().ReverseMap();
+            CreateMap<OnlineDietFaqUpdateDto, ObjOnlineDietFaq>().ReverseMap();
+
+            CreateMap<OnlineDietInformationListCreateDto, ObjOnlineDietInformationList>().ReverseMap();
+            CreateMap<OnlineDietInformationListListDto, ObjOnlineDietInformationList>().ReverseMap();
+            CreateMap<OnlineDietInformationListUpdateDto, ObjOnlineDietInformationList>().ReverseMap();
+
+            CreateMap<FaxNumberCreateDto, ObjFaxNumber>().ReverseMap();
+            CreateMap<FaxNumberListDto, ObjFaxNumber>().ReverseMap();
+            CreateMap<FaxNumberUpdateDto, ObjFaxNumber>().ReverseMap();
+
+            CreateMap<PhoneNumberCreateDto, ObjPhoneNumber>().ReverseMap();
+            CreateMap<PhoneNumberListDto, ObjPhoneNumber>().ReverseMap();
+            CreateMap<PhoneNumberUpdateDto, ObjPhoneNumber>().ReverseMap();
         }
     }
 }

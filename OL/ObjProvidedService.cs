@@ -11,11 +11,9 @@ namespace OL
     public class ObjProvidedService : BaseEntity
     {
         public string Title { get; set; }
-        public string ImagePath { get; set; }
         public string Description { get; set; }
-        public DateTime CreatedDate { get; set; }
+        public string IconCode { get; set; }
         public bool Status { get; set; }
-        [NotMapped]
-        public IFormFile FileDoc { get; set; }
+
     }
 }

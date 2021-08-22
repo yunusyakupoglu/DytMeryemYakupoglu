@@ -15,6 +15,7 @@ namespace BL.ValidationRules
             RuleFor(x => x.Day).NotEmpty();
             RuleFor(x => x.Morning).NotEmpty();
             RuleFor(x => x.Afternoon).NotEmpty();
+            RuleFor(x => x.Status).NotEmpty();
         }
     }
 }

@@ -33,10 +33,9 @@
                 <table class="table">
                     <thead class="bg-warning text-white">
                         <tr>
-                            <th>Tarih</th>
-                            <th>Resim</th>
                             <th>Başlık</th>
                             <th>İçerik</th>
+                            <th>Simge</th>
                             <th>Aktiflik</th>
                             <th>İşlemler</th>
                         </tr>
@@ -44,18 +43,17 @@
                     <tbody>
                         @for (int item = 0; item < Model?.Count; item++)
                         {
-                            <tr>
-                                <td>@Model[item].CreatedDate.ToString("dd/MM/yyyy")</td>
-                                <td> <img width="50px" height="50px" src="@Model[item].ImagePath" /> </td>
-                                <td>@Model[item].Title</td>
-                                <td>@Model[item].Description</td>
-                                <td>
-                                    <input type="checkbox" name="@Model[item].Status" asp-for="@Model[item].Status" value="@Model[item].Status" />
-                                </td>
-                                <td>
-                                    <a asp-action="Update" asp-route-id="@Model[item].Id">Güncelle</a>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td>@Model[item].Title</td>
+                            <td>@Model[item].Description</td>
+                            <td><i class="fa @Model[item].IconCode"></i></td>
+                            <td>
+                                <input type="checkbox" name="@Model[item].Status" asp-for="@Model[item].Status" value="@Model[item].Status" />
+                            </td>
+                            <td>
+                                <a asp-action="Update" asp-route-id="@Model[item].Id">Güncelle</a>
+                            </td>
+                        </tr>
                         }
                     </tbody>
                 </table>

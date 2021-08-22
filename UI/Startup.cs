@@ -37,7 +37,6 @@ namespace UI
         {
             services.AddDependencies(Configuration);
             services.AddTransient<IValidator<UserCreateModel>, UserCreateModelValidator>();
-            services.AddTransient<IValidator<NumberCreateModel>, NumberCreateModelValidator>();
 
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddMvc().AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix).AddDataAnnotationsLocalization();

@@ -2,6 +2,7 @@
 using BL.IServices;
 using DTOs;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -13,6 +14,7 @@ using UI.Models;
 
 namespace UI.Controllers
 {
+    [Authorize]
     public class BlogController : Controller
     {
         private readonly IBlogManager _blogManager;

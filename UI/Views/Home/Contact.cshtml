@@ -1,147 +1,80 @@
 ﻿@model HomeViewModel
 @{
+    ViewData["Title"] = "İletişim";
     Layout = "_Layout";
 }
 
 
-<div class="section-map box-middle-container row-20">
-    @*<div class="google-map" data-coords="41.0309358466721, 28.700587191276593" data-zoom="12" data-skin=" " data-marker-pos-top="30" data-marker-pos="col-md-6-right" data-marker="http://templates.framework-y.com/signflow/images/marker-map.png"></div>*@
-    <div class="overlaybox overlaybox-side overlaybox">
-        <div class="container content">
-            <div class="row">
-
-
-                <div class="col-md-6 overlaybox-inner box-middle shadow-1 col-sm-12">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <ul class="fa-ul">
-                                @foreach (var item in Model.addresses)
-                                {
-                                    @if (item.Status == true)
-                                    {
-                                        <li>
-                                            <i class="fa-li fa fa-home"></i>
-                                            @item.Description
-                                        </li>
-                                    }
-                                }
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <ul class="fa-ul">
-                                @foreach (var item in Model.numberCategories)
-                                {
-                                    @foreach (var number in Model.numbers)
-                                    {
-                                        @if (item.Status == true && number.Status == true)
-                                        {
-                                            @if (item.Id == number.NumberCategoryId)
-                                            {
-                                                <li><i class="fa @item.IconCode"></i>@number.Definition</li>
-                                            }
-                                        }
-                                    }
-                                }
-                            </ul>
-                        </div>
-                    </div>
-                    <hr class="space m" />
-                    <div class="btn-group social-group btn-group-icons">
-                        @foreach (var item in Model.socialMediaAccounts)
-                        {
-                            @if (item.Status == true)
-                            {
-                                <a target="_blank" href="@item.Url" data-placement="top" title="@item.Name">
-                                    <i class="fa @item.IconCode text-s circle"></i>
-                                </a>
-                            }
-                        }
-                    </div>
-                </div>
-
-
-
-
-                @*<div class="col-md-6 overlaybox-inner box-middle" data-anima="fade-left">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h4>Signflow</h4>
-                                <p class="text-left">
-                                    Ligula aenean, voluptatem a lorem laoreet quod dolores acnatoque modiignani merto.
-                                </p>
-                                <hr class="space s" />
-                                <div class="btn-group social-group btn-group-icons social-colors">
-                                    <a target="_blank" href="#" data-social="share-facebook"><i class="fa fa-facebook-square"></i></a>
-                                    <a target="_blank" href="#" data-social="share-twitter"><i class="fa fa-twitter-square"></i></a>
-                                    <a target="_blank" href="#" data-social="share-google"><i class="fa fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <hr class="space visible-xs" />
-                                <h4>Contacts</h4>
-                                <p>
-                                    05, Martin Street A598,  Polo Alto, San Francisco
-                                </p>
-                                <hr class="space s" />
-                                <ul class="fa-ul">
-                                    <li><i class="fa-li fa-envelope fa"></i> hello@company.com</li>
-                                    <li><i class="fa-li fa-phone fa"></i> (123) 456-78910</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>*@
-
-
-
-                <div class="col-md-6"></div>
-            </div>
+<div class="section-bg-image box-middle-container overlay-container row-19" data-natural-height="950" data-natural-width="1920" data-parallax="scroll" data-bleed="0" data-image-src="../images/hakkimizda.jpg">
+    <div class="container content overlay-content box-middle white text-center">
+        <div class="title-base" data-anima="fade-top">
+            <hr />
+            <h1 class="text-xl">Bize Ulaş</h1>
         </div>
     </div>
 </div>
 <div class="section-empty">
     <div class="container content">
         <div class="row">
-            <div class="col-md-6 col-sm-12 text-left">
-                <div class="title-base text-left">
-                    <hr />
-                    <h2>Keep in touch</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipiscing elitsed do eiusmod tempor incididunt utlaboro.
-                    </p>
+
+            <div class="col-md-6 boxed-inverse shadow-1 col-sm-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="fa-ul">
+                            @foreach (var item in Model.addresses)
+                            {
+                                @if (item.Status == true)
+                                {
+                                    <li>
+                                        <i class="fa-li fa fa-home"></i>
+                                        @item.Description
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </div>
+                    <div class="col-md-12">
+                        <ul class="fa-ul">
+                            @foreach (var item in Model.PhoneNumbers)
+                            {
+
+                                @if (item.Status == true)
+                                {
+                                    <li>
+                                        <i class="fa-li fa fa-phone"></i>
+                                        @item.Definition
+                                    </li>
+                                }
+                            }
+                            @foreach (var item in Model.FaxNumbers)
+                            {
+
+                                @if (item.Status == true)
+                                {
+                                    <li>
+                                        <i class="fa-li fa fa-fax"></i>
+                                        @item.Definition
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </div>
                 </div>
-
-                <hr class="space s" />
-                <form action="http://www.framework-y.com/scripts/php/contact-form.php" class="form-box form-ajax" method="post">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p>Name</p>
-                            <input id="name" name="name" placeholder="" type="text" class="form-control form-value" required>
-                        </div>
-                        <div class="col-md-6">
-                            <p>Email</p>
-                            <input id="email" name="email" placeholder="" type="email" class="form-control form-value" required>
-                        </div>
-                    </div>
-                    <hr class="space xs" />
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p>Messagge</p>
-                            <textarea id="messagge" name="messagge" placeholder="" class="form-control form-value" required></textarea>
-                            <hr class="space s" />
-                            <button class="btn-sm btn circle-button" type="submit"><i class="fa fa-envelope-o"></i>Send messagge</button>
-                        </div>
-                    </div>
-                    <div class="success-box">
-                        <div class="alert alert-success">Congratulations. Your message has been sent successfully</div>
-                    </div>
-                    <div class="error-box">
-                        <div class="alert alert-warning">Error, please retry. Your message has not been sent</div>
-                    </div>
-                </form>
+                <hr class="space m" />
+                <div class="btn-group social-group btn-group-icons">
+                    @foreach (var item in Model.socialMediaAccounts)
+                    {
+                        @if (item.Status == true)
+                        {
+                            <a target="_blank" href="@item.Url" data-placement="top" title="@item.Name">
+                                <i class="fa @item.IconCode text-s circle"></i>
+                            </a>
+                        }
+                    }
+                </div>
             </div>
-            <div class="col-md-6 col-sm-12">
 
-                <hr class="space  " />
+            <div class="col-md-6 boxed-inverse shadow-1 col-sm-12">
                 <table class="table table-hover">
                     <thead>
                         <tr>

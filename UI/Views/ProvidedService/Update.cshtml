@@ -16,10 +16,8 @@
     <div class="row">
         <div class="col-12">
             <div class="card">
-                <form asp-action="Update" method="post"  enctype="multipart/form-data">
+                <form asp-action="Update" method="post">
                     <div asp-validation-summary="ModelOnly" class="text-color"></div>
-                    @Html.HiddenFor(m=> m.ImagePath)
-                    @Html.HiddenFor(m=> m.CreatedDate)
                     <div class="card-body">
                         <div class="row m-auto">
                             <div class="col-12">
@@ -33,14 +31,10 @@
                                     <input type="text" asp-for="Description" name="Description" class="form-control" id="Name" placeholder="" required>
                                     <span asp-validation-for="Description"></span>
                                 </div>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Upload</span>
-                                    </div>
-                                    <div class="custom-file">
-                                        <input asp-for="FileDoc" name="FileDoc" class="custom-file-input" id="FileDoc">
-                                        <label class="custom-file-label" asp-for="FileDoc">Choose file</label>
-                                    </div>
+                                <div class="form-group">
+                                    <label asp-for="IconCode" class="control-label col-form-label">Simge Kodu</label>
+                                    <input type="text" asp-for="IconCode" name="IconCode" class="form-control" id="Name" placeholder="" required>
+                                    <span asp-validation-for="IconCode"></span>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input material-inputs" type="checkbox" asp-for="@Model.Status">

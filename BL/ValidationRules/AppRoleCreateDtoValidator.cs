@@ -13,6 +13,7 @@ namespace BL.ValidationRules
         public AppRoleCreateDtoValidator()
         {
             RuleFor(x => x.Definition).NotEmpty();
+            RuleFor(x => x.Status).NotEmpty();
         }
     }
 }

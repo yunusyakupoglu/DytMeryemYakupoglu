@@ -1,0 +1,210 @@
+﻿@model OnlineDietCreateDto
+@{
+    Layout = "_Panel";
+}
+
+<div class="row page-titles">
+    <div class="col-md-5 col-12 align-self-center">
+        <h3 class="text-themecolor mb-0">Danışan Formları</h3>
+        <ol class="breadcrumb mb-0 p-0 bg-transparent">
+            <li class="breadcrumb-item"><a asp-action="Index">Danışan Formları</a></li>
+            <li class="breadcrumb-item active">Yeni Danışan Formu Ekle</li>
+        </ol>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <form asp-action="Create" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-color"></div>
+                    <div class="card-body">
+                        <div class="row m-auto">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label asp-for="FirstName" class="control-label col-form-label">Ad</label>
+                                    <input type="text" asp-for="FirstName" name="FirstName" class="form-control" id="FirstName" placeholder="" required>
+                                    <span asp-validation-for="FirstName"></span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label asp-for="LastName" class="control-label col-form-label">Soyad</label>
+                                    <input type="text" asp-for="LastName" name="LastName" class="form-control" id="LastName" placeholder="" required>
+                                    <span asp-validation-for="LastName"></span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label asp-for="PhoneNumber" class="control-label col-form-label">Telefon Numarası</label>
+                                    <input type="text" asp-for="PhoneNumber" name="PhoneNumber" class="form-control" id="PhoneNumber" placeholder="" required>
+                                    <span asp-validation-for="PhoneNumber"></span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label asp-for="InstagramAccount" class="control-label col-form-label">İnstagram Hesabı</label>
+                                    <input type="text" asp-for="InstagramAccount" name="InstagramAccount" class="form-control" id="InstagramAccount" placeholder="" required>
+                                    <span asp-validation-for="InstagramAccount"></span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label asp-for="Job" class="control-label col-form-label">Mesleği</label>
+                                    <input type="text" asp-for="Job" name="Job" class="form-control" id="Job" placeholder="" required>
+                                    <span asp-validation-for="Job"></span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label asp-for="Age" class="control-label col-form-label">Yaş</label>
+                                    <input type="text" asp-for="Age" name="Age" class="form-control" id="Age" placeholder="" required>
+                                    <span asp-validation-for="Age"></span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label asp-for="Gender" class="control-label col-form-label">Cinsiyet</label>
+                                    <select class="custom-select" asp-for="Gender" name="Gender" id="inputGroupSelect01" required>
+                                        <option selected>Seçiniz...</option>
+                                        <option value="1">Erkek</option>
+                                        <option value="2">Kadın</option>
+                                        <option value="3">Belirtmek İstemiyorum</option>
+                                    </select>
+                                    <span asp-validation-for="Gender"></span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label asp-for="Size" class="control-label col-form-label">Boy</label>
+                                    <input type="text" asp-for="Size" name="Size" class="form-control" id="Size" placeholder="" required>
+                                    <span asp-validation-for="Size"></span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label asp-for="Weight" class="control-label col-form-label">Kilo</label>
+                                    <input type="text" asp-for="Weight" name="Weight" class="form-control" id="Weight" placeholder="" required>
+                                    <span asp-validation-for="Weight"></span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label asp-for="TargetWeight" class="control-label col-form-label">Hedeflenen Kilo</label>
+                                    <input type="text" asp-for="TargetWeight" name="TargetWeight" class="form-control" id="TargetWeight" placeholder="" required>
+                                    <span asp-validation-for="TargetWeight"></span>
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label asp-for="NumberOfMeals" class="control-label col-form-label">Günlük Öğün Sayısı</label>
+                                    <input type="text" asp-for="NumberOfMeals" name="NumberOfMeals" class="form-control" id="NumberOfMeals" placeholder="" required>
+                                    <span asp-validation-for="NumberOfMeals"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label asp-for="FavoriteFoods" class="control-label col-form-label">Sevdiğiniz Yiyecekler</label>
+                                    <input type="text" asp-for="FavoriteFoods" name="FavoriteFoods" class="form-control" id="FavoriteFoods" placeholder="Sevdiğiniz yiyecek yoksa 'YOK' yazınız." required>
+                                    <span asp-validation-for="FavoriteFoods"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label asp-for="HateFoods" class="control-label col-form-label">Sevmediğiniz Yiyecekler</label>
+                                    <input type="text" asp-for="HateFoods" name="HateFoods" class="form-control" id="HateFoods" placeholder="Sevmediğiniz yiyecek yoksa 'YOK' yazınız." required>
+                                    <span asp-validation-for="HateFoods"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label asp-for="AllergicFoods" class="control-label col-form-label">Alerjiniz Olan Yiyecekler</label>
+                                    <input type="text" asp-for="AllergicFoods" name="AllergicFoods" class="form-control" id="AllergicFoods" placeholder="Alerji yapan yiyecek yoksa 'YOK' yazınız." required>
+                                    <span asp-validation-for="AllergicFoods"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label asp-for="WeightReason" class="control-label col-form-label">Kilo Alma Sebebinizi Açıklayınız.</label>
+                                    <textarea asp-for="WeightReason" name="WeightReason" class="form-control" id="WeightReason" placeholder="" required></textarea>
+                                    <span asp-validation-for="WeightReason"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label asp-for="DailyNutrition" class="control-label col-form-label">Günlük Beslenme Şeklinizden Ve Besinlerinizden Bahsediniz.</label>
+                                    <textarea asp-for="DailyNutrition" name="DailyNutrition" class="form-control" id="DailyNutrition" placeholder="" required></textarea>
+                                    <span asp-validation-for="DailyNutrition"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label asp-for="PersonalInformation" class="control-label col-form-label">Kendiniz Hakkında Bahsetmek İstediğiniz Bir Şey Varsa Bahsediniz.</label>
+                                    <textarea asp-for="PersonalInformation" name="PersonalInformation" class="form-control" id="PersonalInformation" placeholder="Kendiniz hakkında bahsetmek istediğiniz bir şey yoksa 'YOK' yazınız." required></textarea>
+                                    <span asp-validation-for="PersonalInformation"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label asp-for="HealthProblem" class="control-label col-form-label">Sağlık Probleminiz Varsa Açıklayınız.</label>
+                                    <textarea asp-for="HealthProblem" name="HealthProblem" class="form-control" id="HealthProblem" placeholder="Sağlık probleminiz yoksa 'YOK' yazınız." required></textarea>
+                                    <span asp-validation-for="HealthProblem"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label asp-for="UseMedicine" class="control-label col-form-label">Aktif Kullandığınız İlaçlar</label>
+                                    <textarea asp-for="UseMedicine" name="UseMedicine" class="form-control" id="UseMedicine" placeholder="Kullandığınız ilaç yoksa 'YOK' yazınız." required></textarea>
+                                    <span asp-validation-for="UseMedicine"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label asp-for="SpecialCase" class="control-label col-form-label">Özel Durumunuz Varsa Açıklayınız.</label>
+                                    <textarea asp-for="SpecialCase" name="SpecialCase" class="form-control" id="SpecialCase" placeholder="Örn: Vegan, Vejeteryan, Hamilelik, Emziren Anne, Menopoz, Mide Ameliyatı, Liposaction, Mide Botoksu, Mide Balonu vb. Özel durumunuz yoksa 'YOK' yazınız." required></textarea>
+                                    <span asp-validation-for="SpecialCase"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label asp-for="ReferencePerson" class="control-label col-form-label">Bizi Nereden Duydunuz ?</label>
+                                    <input type="text" asp-for="ReferencePerson" name="ReferencePerson" class="form-control" id="ReferencePerson" placeholder="Websitemizden veya instagram hesabımızdan bulduysanız belirtiniz." required>
+                                    <span asp-validation-for="ReferencePerson"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label asp-for="SharePhotos" class="control-label col-form-label">Öncesi Sonrası Fotoğraflarınızın Paylaşılmasını İster Misiniz ?</label>
+                                    <select class="custom-select" asp-for="SharePhotos" name="SharePhotos" id="SharePhotos" required>
+                                        <option selected>Seçiniz...</option>
+                                        <option value="1">Evet, İsiyorum</option>
+                                        <option value="2">Hayır, İstemiyorum</option>
+                                        <option value="3">Emin Değilim</option>
+                                    </select>
+                                    <span asp-validation-for="SharePhotos"></span>
+                                </div>
+                            </div>
+                            <div class="form-check form-check-inline" hidden>
+                                <input class="form-check-input material-inputs" type="checkbox" asp-for="@Model.Status" checked>
+                                <label class="form-check-label" asp-for="@Model.Status">
+                                    Aktif
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="card-body">
+                        <div class="d-md-flex no-block align-items-center">
+                            <div class="action-form">
+                                <div class="form-group mb-0 text-center">
+                                    <button type="submit" class="btn btn-info waves-effect waves-light">Ekle</button>
+                                    <a asp-action="Index" class="btn btn-dark waves-effect waves-light">Tüm Danışan Formları</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

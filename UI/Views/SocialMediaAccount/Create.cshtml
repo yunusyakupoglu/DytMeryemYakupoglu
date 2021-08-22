@@ -36,6 +36,12 @@
                                     <input type="text" asp-for="IconCode" name="IconCode" class="form-control" placeholder="" required>
                                     <span asp-validation-for="IconCode"></span>
                                 </div>
+                                <div class="form-check form-check-inline" hidden>
+                                    <input class="form-check-input material-inputs" type="checkbox" asp-for="@Model.Status" checked>
+                                    <label class="form-check-label" asp-for="@Model.Status">
+                                        Aktif
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>

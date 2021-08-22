@@ -9,11 +9,9 @@ namespace DTOs
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public string ImagePath { get; set; }
         public string Description { get; set; }
+        public string IconCode { get; set; }
         public bool Status { get; set; }
-        public DateTime CreatedDate { get; set; }
-        public IFormFile FileDoc { get; set; }
 
     }
 }

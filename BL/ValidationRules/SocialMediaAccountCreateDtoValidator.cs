@@ -15,6 +15,7 @@ namespace BL.ValidationRules
             RuleFor(x => x.Name).NotEmpty();
             RuleFor(x => x.Url).NotEmpty();
             RuleFor(x => x.IconCode).NotEmpty();
+            RuleFor(x => x.Status).NotEmpty();
         }
     }
 }

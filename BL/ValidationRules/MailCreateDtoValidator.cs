@@ -13,6 +13,7 @@ namespace BL.ValidationRules
         public MailCreateDtoValidator()
         {
             RuleFor(x => x.MailAddress).NotEmpty();
+            RuleFor(x => x.Status).NotEmpty();
         }
     }
 }

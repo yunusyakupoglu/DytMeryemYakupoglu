@@ -12,8 +12,10 @@ namespace OL
     {
         public string FirstName { get; set; }
         public string SurName { get; set; }
+        public string Month { get; set; }
         public string FilePath { get; set; }
         [NotMapped]
         public IFormFile FileDoc { get; set; }
+        public bool Status { get; set; }
     }
 }

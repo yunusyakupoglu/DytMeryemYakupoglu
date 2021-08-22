@@ -17,8 +17,11 @@
     <link rel="stylesheet" href="~/HTWF/css/animations.css">
     <link rel="stylesheet" href="~/HTWF/scripts/php/contact-form.css">
     <link rel="stylesheet" href="~/HTWF/scripts/social.stream.css">
-    <link rel="icon" href="~/images/favicon.png">
+    <link rel="icon" style="height:100%" href="~/images/logos/dyt.png">
     <link rel="stylesheet" href="~/HTWF/skin.css">
+    <link rel="stylesheet" href="~/HTWF/scripts/magnific-popup.css">
+    <link rel="stylesheet" href="../../../HTWF/scripts/jquery.flipster.min.css">
+
 
 </head>
 <body>
@@ -28,21 +31,12 @@
             <div class="navbar-mini">
                 <div class="container">
                     <div class="nav navbar-nav navbar-left">
-                        <span><i class="fa fa-phone"></i>+01-23-4226789</span>
                         <hr />
-                        <span><i class="fa fa-envelope-o"></i>info@Framework Y.com</span>
+                        <span><i class="fa fa-envelope-o"></i>info@diyetisyenmeryemyakupoglu.com</span>
                         <hr />
-                        <span><i class="fa fa-clock-o"></i> Mon - Sat: 9:00 - 18:00 </span>
                     </div>
                     <div class="nav navbar-nav navbar-right">
                         <div class="minisocial-group">
-                            <a target="_blank" href="#"><i class="fa fa-facebook first"></i></a>
-                            <a target="_blank" href="#"><i class="fa fa-twitter"></i></a>
-                            <a target="_blank" href="#"><i class="fa fa-instagram"></i></a>
-                            <a target="_blank" href="#"><i class="fa fa-youtube"></i></a>
-                            <a target="_blank" href="#"><i class="fa fa-linkedin"></i></a>
-                            <a target="_blank" href="#"><i class="fa fa-pinterest"></i></a>
-                            <a target="_blank" href="#"><i class="fa fa-google-plus"></i></a>
                             <a asp-controller="ProvidedService" asp-action="Index"><i class="fa fa-user"></i></a>
                         </div>
                     </div>
@@ -54,28 +48,23 @@
                         <button type="button" class="navbar-toggle">
                             <i class="fa fa-bars"></i>
                         </button>
-                        <a class="navbar-brand" asp-action="Index"><img src="~/images/logo-black.png" alt="logo" /> </a>
+                        <a class="navbar-brand" asp-action="Index"><img src="~/images/logos/dytyazi.png" alt="logo" /> </a>
                     </div>
                     <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav">
                             <li><a asp-action="AboutUs">Hakkımızda</a></li>
-                            <li><a asp-action="Services">Hizmetler</a></li>
+                            @*<li><a asp-action="Services">Hizmetler</a></li>*@
                             <li><a asp-action="Blog">Blog</a></li>
+                            @*<li><a asp-action="Pricing">Diyet Paketleri</a></li>*@
                             <li><a asp-action="OnlineDiet">Online Diyet</a></li>
                             <li><a asp-action="Weakened">Zayıflayanlar</a></li>
                             <li><a asp-action="Comments">Yorumlar</a></li>
-                            <li><a asp-action="Pricing">Diyet Paketleri</a></li>
                             <li><a asp-action="Contact">Bize Ulaş</a></li>
                         </ul>
                         <div class="nav navbar-nav navbar-right">
-                            <div class="search-box-menu">
-                                <div class="search-box scrolldown">
-                                    <input type="text" class="form-control" placeholder="Search for...">
-                                </div>
-                                <button type="button" class="btn btn-default btn-search">
-                                    <span class="fa fa-search"></span>
-                                </button>
-                            </div>
+                            <ul class="nav navbar-nav">
+                                <li><a class="btn" style="background-color: #A9CCE3 !important; color:white !important;" asp-action="OnlineDietRecord">Hemen Başlayalım</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -91,36 +80,23 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-3 footer-center text-left">
-                        <img width="120" src="~/images/logo.png" alt="" />
+                        <img width="100%" src="~/images/logos/dytyazilight.png" alt="" />
                     </div>
-                    <div class="col-md-6 footer-left text-left">
-                        <p>Collins Street West 8007, San Fransico, United States.</p>
+                    <div class="col-md-6 footer-left text-center">
                         <div class="tag-row">
-                            <span>support@company.com</span>
-                            <span>+02 3205550678</span>
+                            <span><a href="mailto:destek@diyetisyenmeryemyakupoglu.com">Destek</a></span>
+                            <span><a asp-action="AboutUs">SSS</a></span>
+                            <span><a asp-action="Contact">İletişim</a></span>
                         </div>
                     </div>
-                    <div class="col-md-3 footer-left text-right text-left-sm">
-                        <div class="btn-group social-group btn-group-icons">
-                            <a target="_blank" href="#" data-social="share-facebook">
-                                <i class="fa fa-facebook text-xs circle"></i>
-                            </a>
-                            <a target="_blank" href="#" data-social="share-twitter">
-                                <i class="fa fa-twitter text-xs circle"></i>
-                            </a>
-                            <a target="_blank" href="#" data-social="share-google">
-                                <i class="fa fa-google-plus text-xs circle"></i>
-                            </a>
-                            <a target="_blank" href="#" data-social="share-linkedin">
-                                <i class="fa fa-linkedin text-xs circle"></i>
-                            </a>
-                        </div>
+                    <div class="col-md-3 footer-center text-right text-left-sm">
+                        <img width="100%" src="~/images/logos/quarter.png" alt="" />
                     </div>
                 </div>
             </div>
             <div class="row copy-row">
                 <div class="col-md-12 copy-text">
-                    © 2018 Signflow - Multipurpose & Tech Business Template <span>Handmade by <a href="http://schiocco.io/">schiocco.io</a></span>
+                    © Copyright Diyetisyenmeryemyakupoglu. All Rights Reserved <span>Designed and developed by <a href="mailto:yunusyakupoglu@outlook.com">Yunus YAKUPOĞLU</a></span>
                 </div>
             </div>
         </div>
@@ -139,7 +115,8 @@
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script src="~/HTWF/scripts/social.stream.min.js"></script>
     <script src="~/HTWF/scripts/flexslider/jquery.flexslider-min.js"></script>
-    <script src="~/HTWF/scripts/smooth.scroll.min.js"></script>
+    <script src="../../../HTWF/scripts/jquery.flipster.min.js"></script>
+    <script src="../../../HTWF/scripts/jquery.progress-counter.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
 </body>

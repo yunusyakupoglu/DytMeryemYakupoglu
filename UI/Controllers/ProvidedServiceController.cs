@@ -50,7 +50,6 @@ namespace UI.Controllers
             if (result.IsValid)
             {
                 var dto = _mapper.Map<ProvidedServiceCreateDto>(model);
-                dto.ImagePath = _providedServiceManager.UploadImage(dto.FileDoc);
                 var createResponse = await _providedServiceManager.CreateAsync(dto);
                 return this.ResponseRedirectAction(createResponse, "Index");
             }
@@ -70,28 +69,8 @@ namespace UI.Controllers
         [HttpPost]
         public async Task<IActionResult> Update(ProvidedServiceUpdateDto dto)
         {
-            var result = _providedServiceUpdateDtoValidator.Validate(dto);
-            if (result.IsValid)
-            {
-                if (dto.FileDoc != null)
-                {
-                    _providedServiceManager.DeleteImage(dto.ImagePath);
-                    dto.ImagePath = _providedServiceManager.UploadImage(dto.FileDoc);
-                    var createResponse = await _providedServiceManager.UpdateAsync(dto);
-                    return this.ResponseRedirectAction(createResponse, "Index");
-                }
-                else
-                {
-                    var createResponse = await _providedServiceManager.UpdateAsync(dto);
-                    return this.ResponseRedirectAction(createResponse, "Index");
-                }
-              
-            }
-            foreach (var error in result.Errors)
-            {
-                ModelState.AddModelError(error.PropertyName, error.ErrorMessage);
-            }
-            return View(dto);
+            var response = await _providedServiceManager.UpdateAsync(dto);
+            return RedirectToAction("Index");
         }
     }
 }

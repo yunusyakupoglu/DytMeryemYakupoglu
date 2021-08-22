@@ -49,12 +49,6 @@ namespace BL.DependencyResolvers.Microsoft
             services.AddTransient<IValidator<MailCreateDto>, MailCreateDtoValidator>();
             services.AddTransient<IValidator<MailUpdateDto>, MailUpdateDtoValidator>();
 
-            services.AddTransient<IValidator<NumberCategoryCreateDto>, NumberCategoryCreateDtoValidator>();
-            services.AddTransient<IValidator<NumberCategoryUpdateDto>, NumberCategoryUpdateDtoValidator>();
-
-            services.AddTransient<IValidator<NumberCreateDto>, NumberCreateDtoValidator>();
-            services.AddTransient<IValidator<NumberUpdateDto>, NumberUpdateDtoValidator>();
-
             services.AddTransient<IValidator<ProvidedServiceCreateDto>, ProvidedServiceCreateDtoValidator>();
             services.AddTransient<IValidator<ProvidedServiceUpdateDto>, ProvidedServiceUpdateDtoValidator>();
 
@@ -67,6 +61,36 @@ namespace BL.DependencyResolvers.Microsoft
             services.AddTransient<IValidator<AndulasyonCreateDto>, AndulasyonCreateDtoValidator>();
             services.AddTransient<IValidator<AndulasyonUpdateDto>, AndulasyonUpdateDtoValidator>();
 
+            services.AddTransient<IValidator<CommentCreateDto>, CommentCreateDtoValidator>();
+            services.AddTransient<IValidator<CommentUpdateDto>, CommentUpdateDtoValidator>();
+
+            services.AddTransient<IValidator<PricingCreateDto>, PricingCreateDtoValidator>();
+            services.AddTransient<IValidator<PricingUpdateDto>, PricingUpdateDtoValidator>();
+
+            services.AddTransient<IValidator<OnlineDietCreateDto>, OnlineDietCreateDtoValidator>();
+            services.AddTransient<IValidator<OnlineDietUpdateDto>, OnlineDietUpdateDtoValidator>();
+
+            services.AddTransient<IValidator<WeakenedCreateDto>, WeakenedCreateDtoValidator>();
+            services.AddTransient<IValidator<WeakenedUpdateDto>, WeakenedUpdateDtoValidator>();
+
+            services.AddTransient<IValidator<AboutUsCreateDto>, AboutUsCreateDtoValidator>();
+            services.AddTransient<IValidator<AboutUsUpdateDto>, AboutUsUpdateDtoValidator>();
+
+            services.AddTransient<IValidator<FaqCreateDto>, FaqCreateDtoValidator>();
+            services.AddTransient<IValidator<FaqUpdateDto>, FaqUpdateDtoValidator>();
+
+            services.AddTransient<IValidator<OnlineDietFaqCreateDto>, OnlineDietFaqCreateDtoValidator>();
+            services.AddTransient<IValidator<OnlineDietFaqUpdateDto>, OnlineDietFaqUpdateDtoValidator>();
+
+            services.AddTransient<IValidator<OnlineDietInformationListCreateDto>, OnlineDietInformationListCreateDtoValidator>();
+            services.AddTransient<IValidator<OnlineDietInformationListUpdateDto>, OnlineDietInformationListUpdateDtoValidator>();
+
+            services.AddTransient<IValidator<FaxNumberCreateDto>, FaxNumberCreateDtoValidator>();
+            services.AddTransient<IValidator<FaxNumberUpdateDto>, FaxNumberUpdateDtoValidator>();
+
+            services.AddTransient<IValidator<PhoneNumberCreateDto>, PhoneNumberCreateDtoValidator>();
+            services.AddTransient<IValidator<PhoneNumberUpdateDto>, PhoneNumberUpdateDtoValidator>();
+
             services.AddTransient<IValidator<AppUserLoginDto>, AppUserLoginDtoValidator>();
 
 
@@ -77,12 +101,20 @@ namespace BL.DependencyResolvers.Microsoft
             services.AddScoped<IBlogManager, BlogManager>();
             services.AddScoped<ICategoryManager, CategoryManager>();
             services.AddScoped<IMailManager, MailManager>();
-            services.AddScoped<INumberCategoryManager, NumberCategoryManager>();
-            services.AddScoped<INumberManager, NumberManager>();
             services.AddScoped<IProvidedServiceManager, ProvidedServiceManager>();
             services.AddScoped<ISocialMediaAccountManager, SocialMediaAccountManager>();
             services.AddScoped<IWorkingHourManager, WorkingHourManager>();
             services.AddScoped<IAndulasyonManager, AndulasyonManager>();
+            services.AddScoped<ICommentManager, CommentManager>();
+            services.AddScoped<IPricingManager, PricingManager>();
+            services.AddScoped<IOnlineDietManager, OnlineDietManager>();
+            services.AddScoped<IWeakenedManager, WeakenedManager>();
+            services.AddScoped<IAboutUsManager, AboutUsManager>();
+            services.AddScoped<IFaqManager, FaqManager>();
+            services.AddScoped<IOnlineDietFaqManager, OnlineDietFaqManager>();
+            services.AddScoped<IOnlineDietInformationListManager, OnlineDietInformationListManager>();
+            services.AddScoped<IFaxNumberManager, FaxNumberManager>();
+            services.AddScoped<IPhoneNumberManager, PhoneNumberManager>();
         }
     }
 }

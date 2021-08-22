@@ -2,6 +2,7 @@
 using BL.IServices;
 using DTOs;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ using UI.Extensions;
 
 namespace UI.Controllers
 {
+    [Authorize]
     public class SocialMediaAccountController : Controller
     {
         private readonly ISocialMediaAccountManager _socialMediaAccountManager;

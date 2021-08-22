@@ -1,0 +1,58 @@
+﻿@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Yorumlar";
+    Layout = "_Layout";
+}
+
+
+<div class="section-bg-image box-middle-container overlay-container row-19" data-natural-height="950" data-natural-width="1920" data-parallax="scroll" data-bleed="0" data-image-src="../images/blur-bg.jpg">
+    <div class="container content overlay-content box-middle white text-center">
+        <div class="title-base" data-anima="fade-top">
+            <hr />
+            <h1 class="text-xl">Yorumlar <i class="fa fa-comments-o"></i></h1>
+        </div>
+    </div>
+</div>
+<div class="section-empty">
+    <div class="container content">
+        <a class="btn btn-lg anima-button" asp-action="CreateComments"><i class="fa fa-comment"></i>Yorum Yap</a>
+
+        <hr class="space" />
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="grid-list grid-layout grid-15">
+                    <div class="grid-box row">
+                        @foreach (var item in Model.Comments)
+                        {
+                            @if (@item.Status == true)
+                            {
+                                <div class="grid-item col-md-6">
+                                    <div class="advs-box niche-box-testimonails-cloud" data-anima="scale-rotate" data-trigger="hover">
+                                        <div class="name-box vertical-row">
+                                            <i class="vertical-col fa fa-user text-l circle"></i>
+                                            <h5 class="vertical-col subtitle">@item.FirstName @item.Lastname<span class="subtxt">@item.Job</span></h5>
+                                        </div>
+                                        <hr class="space s" />
+                                        <p>
+                                            @item.Description
+                                        </p>
+                                    </div>
+                                </div>
+                            }
+
+                        }
+
+
+
+                    </div>
+                    <div class="list-nav text-center">
+                        <ul class="pagination pagination-sm pagination-grid" data-page-items="8" data-pagination-anima="fade-bottom" data-options="scrollTop:true"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

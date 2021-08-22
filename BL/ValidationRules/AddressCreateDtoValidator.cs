@@ -14,6 +14,7 @@ namespace BL.ValidationRules
         {
             RuleFor(x => x.Coordinate).NotEmpty();
             RuleFor(x => x.Description).NotEmpty();
+            RuleFor(x => x.Status).NotEmpty();
         }
     }
 }

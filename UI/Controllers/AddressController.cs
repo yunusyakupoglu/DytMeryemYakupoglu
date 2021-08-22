@@ -3,6 +3,7 @@ using BL.IServices;
 using BL.ValidationRules;
 using DTOs;
 using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ using UI.Extensions;
 
 namespace UI.Controllers
 {
+    [Authorize]
     public class AddressController : Controller
     {
         private readonly IAddressManager _addressManager;

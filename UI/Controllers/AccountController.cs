@@ -30,6 +30,12 @@ namespace UI.Controllers
             _mapper = mapper;
         }
         [Authorize]
+        public async Task<IActionResult> Index()
+        {
+            var response = await _appUserManager.GetAllAsync();
+            return this.ResponseView(response);
+        }
+        [Authorize]
         public IActionResult SignUp()
         {
             var model = new UserCreateModel();
