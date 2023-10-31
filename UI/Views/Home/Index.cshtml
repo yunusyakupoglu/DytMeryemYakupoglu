@@ -1,0 +1,132 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Anasayfa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="section-bg-image box-middle-container overlay-container row-19" data-natural-height="950" data-natural-width="1920" data-parallax="scroll" data-bleed="0" data-image-src="../images/vegetables.jpg">
+    <div class="container content overlay-content box-middle white text-center">
+        <div class="title-base" data-anima="fade-top">
+            <h1 class="text-xxl" style="color:antiquewhite">Nutritionist.</h1>
+        </div>
+    </div>
+</div>
+<div class="section-bg-color section-item">
+    <div class="container content">
+        <div class="grid-list">
+            <div class="grid-box row">
+                @foreach (var item in Model.providedServices)
+                {
+                    @if (item.Status == true)
+                    {
+                        <div class="grid-item col-md-4">
+                            <div class="icon-box">
+                                    <i class="fa @item.IconCode text-xl circle"></i>
+                                <div class="icon-box-cell">
+                                    <label class="text-m">@item.Title</label>
+                                    <p>
+                                        @item.Description
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-bg-image box-middle-container overlay-container row-19" data-natural-height="950" data-natural-width="1920" data-parallax="scroll" data-bleed="0" data-image-opacity="0.2" data-image-src="../images/zeytin.jpg">
+    <div class="container content overlay-content box-middle white text-center">
+        <div class="title-base" data-anima="fade-top">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="icon-box icon-box-top-bottom">
+                        <div class="icon-box-cell">
+                            <i class="fa fa-arrow-up text-xl"></i>
+                        </div>
+                        <div class="icon-box-cell" style="color:white">
+                            <b><label style="color:white" class="counter text-l" data-speed="5000" data-to="3"></label></b>
+                            Yıllık Deneyim
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="icon-box icon-box-top-bottom">
+                        <div class="icon-box-cell">
+                            <i class="fa-check fa text-xl"></i>
+                        </div>
+                        <div class="icon-box-cell" style="color:white">
+                            <b><label style="color:white" class="counter text-l" data-speed="5000" data-to="30"></label></b>
+                            Tamamlanan Kurs Ve Seminer
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="icon-box icon-box-top-bottom">
+                        <div class="icon-box-cell">
+                            <i class="fa fa-smile-o text-xl"></i>
+                        </div>
+                        <div class="icon-box-cell" style="color:white">
+                            <b><label style="color:white" class="counter text-l" data-speed="5000" data-to="1000"></label></b>
+                            Mutlu Danışan
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="section-empty">
+
+
+    <div class="container content">
+        <div class="row">
+
+            <div class="col-md-12">
+                <div class="flexslider carousel outer-navs" data-options="minWidth:200,itemMargin:30,numItems:2,controlNav:false,directionNav:true">
+                    <ul class="slides">
+                        @foreach (var item in Model.blogs)
+                        {
+                            @if (item.Status == true)
+                            {
+                                <li>
+                                    <div class="advs-box niche-box-blog">
+                                        <div class="block-top">
+                                            <div class="block-infos">
+                                                <div class="block-data">
+                                                    <p class="bd-day">@item.CreatedDate.Day</p>
+                                                    <p class="bd-day">@item.CreatedDate.Month</p>
+                                                </div>
+                                                <a class="block-comment" href="#">2 <i class="fa fa-comment-o"></i></a>
+                                            </div>
+                                            <div class="block-title">
+                                                <h2><a href="#">@item.Title</a></h2>
+                                                <div class="tag-row">
+                                                    <span><i class="fa fa-pencil"></i><a>Admin</a></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <a class="img-box img-scale-up" href="#">
+                                            <img src="~/@item.ImagePath" alt="">
+                                        </a>
+                                        <hr class="space s" />
+                                        <a class="btn btn-sm" asp-action="Details" asp-route-id="@item.Id">Oku</a>
+                                    </div>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </div>
+            <hr class="space l" />
+
+            @*<hr class="space l" />*@
+
+        </div>
+    </div>
+</div>

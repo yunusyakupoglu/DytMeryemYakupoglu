@@ -1,0 +1,68 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Hakkımızda";
+    Layout = "_Layout";
+}
+
+
+<div class="section-bg-image box-middle-container overlay-container row-19" data-natural-height="950" data-natural-width="1920" data-parallax="scroll" data-bleed="0" data-image-src="../images/hakkimizda.jpg">
+    <div class="container content overlay-content box-middle white text-center">
+        <div class="title-base" data-anima="fade-top">
+            <hr />
+            <h1 class="text-xl">Dyt. Meryem YAKUPOĞLU Kimdir ?</h1>
+        </div>
+    </div>
+</div>
+<div class="section-empty">
+    <div class="container content">
+        <hr class="space s" />
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="grid-list grid-layout grid-15">
+                    <div class="grid-box row">
+                        @foreach (var item in Model.AboutUsList)
+                        {
+                            @if (@item.Status == true)
+                            {
+                                <div class="row">
+                                    <div class="col-md-12 col-center text-left">
+                                        <h2>@item.Title</h2>
+                                        <p>
+                                            @item.Description
+                                        </p>
+                                    </div>
+                                </div>
+                                <hr class="space l" />
+
+                            }
+
+                        }
+                    </div>
+                </div>
+            </div>
+            <hr class="space s" />
+            <h1 class="text-xl text-center">Sıkça Sorulan Sorular</h1>
+
+            <hr class="space s" />
+            <div class="col-md-12">
+                <div class="list-group accordion-list" data-type="accordion" data-time="1000">
+                    @foreach (var item in Model.Faqs)
+                    {
+                        @if (@item.Status == true)
+                        {
+                            <div class="list-group-item">
+                                <a href="#" class=""> @item.Title</a>
+                                <div class="panel">
+                                    <div class="inner">
+                                        @item.Description
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

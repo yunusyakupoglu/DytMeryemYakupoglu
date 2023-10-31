@@ -1,0 +1,64 @@
+﻿@model WorkingHourUpdateDto
+@{
+    Layout = "_Panel";
+}
+
+<div class="row page-titles">
+    <div class="col-md-5 col-12 align-self-center">
+        <h3 class="text-themecolor mb-0">Çalışma Saatleri</h3>
+        <ol class="breadcrumb mb-0 p-0 bg-transparent">
+            <li class="breadcrumb-item"><a asp-action="Index">Çalışma Saatleri</a></li>
+            <li class="breadcrumb-item active">@Model.Day Günü Çalışma Saatlerini Güncelle</li>
+        </ol>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <form asp-action="Update" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-color"></div>
+                    <div class="card-body">
+                        <div class="row m-auto">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label asp-for="Day" class="control-label col-form-label">Gün</label>
+                                    <input type="text" asp-for="Day" name="Day" class="form-control" id="Name" placeholder="" required>
+                                    <span asp-validation-for="Day"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Morning" class="control-label col-form-label">Sabah</label>
+                                    <input type="text" asp-for="Morning" name="Morning" class="form-control" id="Name" placeholder="" required>
+                                    <span asp-validation-for="Morning"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Afternoon" class="control-label col-form-label">Öğleden Sonra</label>
+                                    <input type="text" asp-for="Afternoon" name="Afternoon" class="form-control" id="Name" placeholder="" required>
+                                    <span asp-validation-for="Afternoon"></span>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input material-inputs" type="checkbox" asp-for="@Model.Status">
+                                    <label class="form-check-label" asp-for="@Model.Status">
+                                        Aktif
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="card-body">
+                        <div class="d-md-flex no-block align-items-center">
+                            <div class="action-form">
+                                <div class="form-group mb-0 text-center">
+                                    <button type="submit" class="btn btn-info waves-effect waves-light">Güncelle</button>
+                                    <a asp-action="Index" class="btn btn-dark waves-effect waves-light">Tüm Çalışma Saatleri</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

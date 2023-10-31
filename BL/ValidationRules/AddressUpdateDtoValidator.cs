@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BL.ValidationRules
 {
-    public class AddressUpdateDtoValidator : AbstractValidator<AddessUpdateDto>
+    public class AddressUpdateDtoValidator : AbstractValidator<AddressUpdateDto>
     {
         public AddressUpdateDtoValidator()
         {

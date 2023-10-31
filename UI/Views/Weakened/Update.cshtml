@@ -1,0 +1,82 @@
+﻿@model WeakenedUpdateDto
+@{
+    Layout = "_Panel";
+}
+
+<div class="row page-titles">
+    <div class="col-md-5 col-12 align-self-center">
+        <h3 class="text-themecolor mb-0">Başarılar</h3>
+        <ol class="breadcrumb mb-0 p-0 bg-transparent">
+            <li class="breadcrumb-item"><a asp-action="Index">Başarılar</a></li>
+            <li class="breadcrumb-item active">@Model.FirstName @Model.SurName Başarı Güncelle</li>
+        </ol>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <form asp-action="Update" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-color"></div>
+                    @Html.HiddenFor(m => m.FilePath)
+                    <div class="card-body">
+                        <div class="row m-auto">
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label asp-for="FirstName" class="control-label col-form-label">Ad</label>
+                                    <input type="text" asp-for="FirstName" name="FirstName" class="form-control" id="FirstName" placeholder="" required>
+                                    <span asp-validation-for="FirstName"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SurName" class="control-label col-form-label">Soyad</label>
+                                    <input type="text" asp-for="SurName" name="SurName" class="form-control" id="SurName" placeholder="" required>
+                                    <span asp-validation-for="SurName"></span>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label asp-for="Month" class="control-label col-form-label">Ay</label>
+                                        <select class="custom-select" asp-for="Month" name="Month" id="inputGroupSelect01" required>
+                                            <option selected>Seçiniz...</option>
+                                            <option value="1 Ayda">1 Ayda</option>
+                                            <option value="2 Ayda">2 Ayda</option>
+                                            <option value="3 Ayda">3 Ayda</option>
+                                            <option value="+4 Ayda">+4 Ayda</option>
+                                        </select>
+                                        <span asp-validation-for="Month"></span>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Upload</span>
+                                    </div>
+                                    <div class="custom-file">
+                                        <input asp-for="FileDoc" name="FileDoc" class="custom-file-input" id="FileDoc">
+                                        <label class="custom-file-label" asp-for="FileDoc">Choose file</label>
+                                    </div>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input material-inputs" type="checkbox" asp-for="@Model.Status">
+                                    <label class="form-check-label" asp-for="@Model.Status">
+                                        Aktif
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="card-body">
+                        <div class="d-md-flex no-block align-items-center">
+                            <div class="action-form">
+                                <div class="form-group mb-0 text-center">
+                                    <button type="submit" class="btn btn-info waves-effect waves-light">Güncelle</button>
+                                    <a asp-action="Index" class="btn btn-dark waves-effect waves-light">Tüm Başarılar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

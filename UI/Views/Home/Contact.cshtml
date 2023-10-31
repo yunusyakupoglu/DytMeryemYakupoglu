@@ -1,0 +1,103 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "İletişim";
+    Layout = "_Layout";
+}
+
+
+<div class="section-bg-image box-middle-container overlay-container row-19" data-natural-height="950" data-natural-width="1920" data-parallax="scroll" data-bleed="0" data-image-src="../images/hakkimizda.jpg">
+    <div class="container content overlay-content box-middle white text-center">
+        <div class="title-base" data-anima="fade-top">
+            <hr />
+            <h1 class="text-xl">Bize Ulaş</h1>
+        </div>
+    </div>
+</div>
+<div class="section-empty">
+    <div class="container content">
+        <div class="row">
+
+            <div class="col-md-6 boxed-inverse shadow-1 col-sm-12">
+                <div class="row">
+                    <div class="col-md-12">
+                        <ul class="fa-ul">
+                            @foreach (var item in Model.addresses)
+                            {
+                                @if (item.Status == true)
+                                {
+                                    <li>
+                                        <i class="fa-li fa fa-home"></i>
+                                        @item.Description
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </div>
+                    <div class="col-md-12">
+                        <ul class="fa-ul">
+                            @foreach (var item in Model.PhoneNumbers)
+                            {
+
+                                @if (item.Status == true)
+                                {
+                                    <li>
+                                        <i class="fa-li fa fa-phone"></i>
+                                        @item.Definition
+                                    </li>
+                                }
+                            }
+                            @foreach (var item in Model.FaxNumbers)
+                            {
+
+                                @if (item.Status == true)
+                                {
+                                    <li>
+                                        <i class="fa-li fa fa-fax"></i>
+                                        @item.Definition
+                                    </li>
+                                }
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <hr class="space m" />
+                <div class="btn-group social-group btn-group-icons">
+                    @foreach (var item in Model.socialMediaAccounts)
+                    {
+                        @if (item.Status == true)
+                        {
+                            <a target="_blank" href="@item.Url" data-placement="top" title="@item.Name">
+                                <i class="fa @item.IconCode text-s circle"></i>
+                            </a>
+                        }
+                    }
+                </div>
+            </div>
+
+            <div class="col-md-6 boxed-inverse shadow-1 col-sm-12">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Gün</th>
+                            <th>Sabah</th>
+                            <th>Öğleden Sonra</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var workingItem in Model.workingHours)
+                        {
+                            @if (workingItem.Status == true)
+                            {
+                                <tr>
+                                    <th>@workingItem.Day</th>
+                                    <th>@workingItem.Morning</th>
+                                    <th>@workingItem.Afternoon</th>
+                                </tr>
+                            }
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

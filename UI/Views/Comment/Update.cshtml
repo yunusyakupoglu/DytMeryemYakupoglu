@@ -1,0 +1,89 @@
+﻿@model CommentUpdateDto
+@{
+    Layout = "_Panel";
+}
+
+<div class="row page-titles">
+    <div class="col-md-5 col-12 align-self-center">
+        <h3 class="text-themecolor mb-0">Yorumlar</h3>
+        <ol class="breadcrumb mb-0 p-0 bg-transparent">
+            <li class="breadcrumb-item"><a asp-action="Index">Yorumlar</a></li>
+            <li class="breadcrumb-item active">@Model.FirstName @Model.Lastname Danışan Yorumunu Güncelle</li>
+        </ol>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <form asp-action="Update" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-color"></div>
+                    <div class="card-body">
+                        <div class="row m-auto">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label asp-for="FirstName" class="control-label col-form-label">Ad</label>
+                                    <input type="text" asp-for="FirstName" name="FirstName" class="form-control" placeholder="" required>
+                                    <span asp-validation-for="FirstName"></span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label asp-for="Lastname" class="control-label col-form-label">Soyad</label>
+                                    <input type="text" asp-for="Lastname" name="Lastname" class="form-control" placeholder="" required>
+                                    <span asp-validation-for="Lastname"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label asp-for="EMail" class="control-label col-form-label">E-Mail</label>
+                                    <input type="text" asp-for="EMail" name="EMail" class="form-control" placeholder="" required>
+                                    <span asp-validation-for="EMail"></span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label asp-for="InstagramAccount" class="control-label col-form-label"><i class="mdi mdi-instagram"></i></label>
+                                    <input type="text" asp-for="InstagramAccount" name="InstagramAccount" class="form-control" placeholder="" required>
+                                    <span asp-validation-for="InstagramAccount"></span>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label asp-for="Job" class="control-label col-form-label">Meslek</label>
+                                    <input type="text" asp-for="Job" name="Job" class="form-control" placeholder="" required>
+                                    <span asp-validation-for="Job"></span>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label asp-for="Description" class="control-label col-form-label">Mesaj</label>
+                                    <textarea style="min-height:200px" type="text" asp-for="Description" name="Description" class="form-control" placeholder="" required></textarea>
+                                    <span asp-validation-for="Description"></span>
+                                </div>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input material-inputs" type="checkbox" asp-for="@Model.Status">
+                                <label class="form-check-label" asp-for="@Model.Status">
+                                    Aktif
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="card-body">
+                        <div class="d-md-flex no-block align-items-center">
+                            <div class="action-form">
+                                <div class="form-group mb-0 text-center">
+                                    <button type="submit" class="btn btn-info waves-effect waves-light">Güncelle</button>
+                                    <a asp-action="Index" class="btn btn-dark waves-effect waves-light">Tüm Mail Adresleri</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

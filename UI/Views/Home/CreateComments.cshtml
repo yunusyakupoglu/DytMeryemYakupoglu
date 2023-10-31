@@ -1,0 +1,76 @@
+﻿@model CommentCreateDto
+
+@{
+    ViewData["Title"] = "Yorum Yap";
+    Layout = "_Layout";
+}
+
+<div class="section-bg-image box-middle-container overlay-container row-19" data-natural-height="950" data-natural-width="1920" data-parallax="scroll" data-bleed="0" data-image-src="../images/blur-bg.jpg">
+    <div class="container content overlay-content box-middle white text-center">
+        <div class="title-base" data-anima="fade-top">
+            <hr />
+            <h1 class="text-xl">Yorum Yap <i class="fa fa-comments-o"></i></h1>
+        </div>
+    </div>
+</div>
+<div class="section-empty section-item text-left">
+    <div class="container content">
+        <div class="col-md-12">
+            <form asp-action="CreateComments" class="form-box form-ajax" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-color"></div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label asp-for="FirstName" class="control-label col-form-label">Adınız</label>
+                        <input id="FirstName" name="FirstName" asp-for="FirstName" placeholder="" type="text" class="form-control form-value" required>
+                        <span asp-validation-for="FirstName"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="Lastname" class="control-label col-form-label">Soyadınız</label>
+                        <input id="Lastname" name="Lastname" asp-for="Lastname" placeholder="" type="text" class="form-control form-value" required>
+                        <span asp-validation-for="Lastname"></span>
+                    </div>
+                    <div class="col-md-12">
+                        <hr class="space s" />
+                        <label asp-for="EMail" class="control-label col-form-label">E-Mail Adresiniz</label>
+                        <input id="EMail" name="EMail" asp-for="EMail" placeholder="" type="text" class="form-control form-value" required>
+                        <span asp-validation-for="EMail"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <hr class="space s" />
+                        <label asp-for="InstagramAccount" class="control-label col-form-label"><i class="fa fa-instagram"></i> İnstagram Hesabınız</label>
+                        <input id="InstagramAccount" name="InstagramAccount" asp-for="InstagramAccount" placeholder="" type="text" class="form-control form-value" required>
+                        <span asp-validation-for="InstagramAccount"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <hr class="space s" />
+                        <label asp-for="Job" class="control-label col-form-label">Mesleğiniz</label>
+                        <input id="Job" name="Job" asp-for="Job" placeholder="" type="text" class="form-control form-value" required>
+                        <span asp-validation-for="Job"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <hr class="space s" />
+                        <label asp-for="Description" class="control-label col-form-label">Mesajınız</label>
+                        <textarea style="min-height:200px; min-width:100%; max-width:100%" asp-for="Description" id="Description" name="Description" class="form-control form-value" required></textarea>
+                        <span asp-validation-for="Description"></span>
+                        <hr class="space s" />
+                        <button class="btn-sm btn" type="submit">Gönder</button>
+                    </div>
+                </div>
+                <div class="col-md-12" hidden>
+                    <input type="checkbox" asp-for="Status" checked>
+                    <label class="control-label col-form-label" asp-for="Status">
+                        Aktif
+                    </label>
+                </div>
+                <div class="success-box">
+                    <div class="alert alert-success">Congratulations. Your message has been sent successfully</div>
+                </div>
+                <div class="error-box">
+                    <div class="alert alert-warning">Error, please retry. Your message has not been sent</div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

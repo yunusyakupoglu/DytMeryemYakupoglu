@@ -14,6 +14,7 @@ namespace DAL.Configurations
         public void Configure(EntityTypeBuilder<ObjMail> builder)
         {
             builder.Property(x => x.MailAddress).HasMaxLength(200).IsRequired();
+            builder.Property(x => x.Status).IsRequired();
         }
     }
 }

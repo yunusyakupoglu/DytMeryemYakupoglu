@@ -1,0 +1,48 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Başarılar";
+
+    Layout = "_Layout";
+}
+<link rel="stylesheet" href="../../../HTWF/css/image-box.css">
+
+
+<div class="section-bg-image box-middle-container overlay-container row-19" data-natural-height="950" data-natural-width="1920" data-parallax="scroll" data-bleed="0" data-image-src="../images/hakkimizda.jpg">
+    <div class="container content overlay-content box-middle white text-center">
+        <div class="title-base" data-anima="fade-top">
+            <hr />
+            <h1 class="text-xl">Başarılar</h1>
+        </div>
+    </div>
+</div>
+<div class="section-empty section-item">
+    <div class="container content">
+        <div class="text-center">
+            <div class="row">
+                @foreach (var item in Model.WeakenedLists)
+                {
+
+                    @if (item.Status == true)
+                    {
+
+                        <div class="col-md-4">
+                            <div class="img-box adv-img adv-img-full-content show" data-anima="fade-right" data-trigger="hover" data-anima-out="hide">
+                                <a class="img-box anima-scale-up anima">
+                                    <img alt="" src="~/@item.FilePath">
+                                </a>
+                                <div class="caption-bg anima">
+                                    <div class="caption">
+                                        <div class="inner">
+                                            <i class=" im-sand-watch2 main-icon anima"></i>
+                                            <h2>@item.Month</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
